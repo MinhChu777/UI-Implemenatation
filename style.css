@@ -26,6 +26,7 @@ body {
         height: 100%;
         background-color: white;
         z-index: -1;
+        background: linear-gradient(to right, white 92%, transparent 100%);
     }
 
     body:after {
@@ -37,6 +38,7 @@ body {
         height: 100%;
         background-color: black;
         z-index: -1;
+        background: linear-gradient(to left, black 92%, transparent 100%);
     }
     
     /* Adjust hero left content for white background */
@@ -219,6 +221,7 @@ header {
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 1.2;
+    margin-left: -20px;
 }
 
 .fire-emoji {
@@ -228,19 +231,22 @@ header {
 
 .product-showcase {
     margin-bottom: 30px;
-    border: 2px solid #a1cce7;
     border-radius: 10px;
     overflow: hidden;
+    margin-right: 120px;
+    margin-left: -50px;
+    position: relative;
 }
 
 .showcase-img {
-    width: 100%;
+    width: 110%;
     height: auto;
     display: block;
 }
 
 .cta-container {
     margin-top: 20px;
+    padding-left: 80px;
 }
 
 .cta-btn {
@@ -255,7 +261,7 @@ header {
 }
 
 .cta-btn:hover {
-    background-color: #ffffff;
+    background-color: #e83e8c;
     color: #000000;
 }
 
