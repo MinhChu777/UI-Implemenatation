@@ -98,7 +98,7 @@ ul {
 
 /* Header styles */
 header {
-    padding: 15px 0;
+    padding: 5px 0;
     background-color: #000000;
     position: sticky;
     top: 0;
@@ -114,7 +114,11 @@ header {
 }
 
 .logo-img {
-    max-height: 50px;
+    height: 65px;
+    width: 55px;
+    margin: 0;
+    padding-left: -40px;
+    padding-top: 7px;
 }
 
 .main-nav ul {
@@ -277,13 +281,20 @@ header {
     width: auto;
 }
 
+.nba-logo {
+    height: 95px;
+    width: auto;
+    margin-top: -10px;
+}
+
 .hero-title {
-    text-align: right;
+    text-align: center;
     margin-bottom: 30px;
+    margin-right: -160px;
 }
 
 .title-top {
-    font-size: 5rem;
+    font-size: 8rem;
     font-weight: 800;
     line-height: 1;
     color: #e83e8c;
@@ -291,7 +302,7 @@ header {
 }
 
 .title-bottom {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 800;
     line-height: 1.2;
     color: #a1cce7;
@@ -299,12 +310,14 @@ header {
 }
 
 .hero-info {
-    text-align: right;
+    text-align: center;
+    margin-right: -60px;
 }
 
 .since {
     font-size: 1.5rem;
     margin-bottom: 15px;
+    margin-right: -125px;
 }
 
 .description {
