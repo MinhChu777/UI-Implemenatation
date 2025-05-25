@@ -1,3 +1,24 @@
+// Debug function to force clear cart
+window.forceClearCart = function() {
+    localStorage.removeItem('butlerCart');
+    const cartBadge = document.getElementById('cartBadge');
+    const cartItems = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
+    
+    if (cartBadge) {
+        cartBadge.textContent = '0';
+        cartBadge.classList.remove('active');
+    }
+    if (cartItems) {
+        cartItems.innerHTML = '<div class="empty-cart"><p>Your cart is empty</p></div>';
+    }
+    if (cartTotal) {
+        cartTotal.textContent = '0.00';
+    }
+    
+    console.log('Cart force cleared!');
+};
+
 // Sample product data
 const products = [
     { id: 1, name: "NBA Hoops 2023-24", type: "Basketball Cards", price: 119.99, brand: "Panini", sport: "basketball", productType: "hobby", availability: "instock" },
@@ -28,6 +49,162 @@ const products = [
 
 let filteredProducts = [...products];
 let currentSort = 'relevancy';
+
+// Cart state management - Make globally accessible
+const cart = {
+    items: [],
+    total: 0,
+    
+    // Add item to cart
+    addItem: function(id, name, price, image = null) {
+        const existingItem = this.items.find(item => item.id === id);
+        
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            this.items.push({
+                id: id,
+                name: name,
+                price: parseFloat(price),
+                quantity: 1,
+                image: image || 'Product Image'
+            });
+        }
+        
+        this.updateTotal();
+        this.updateCartUI();
+        this.animateBadge();
+        this.animateCartBounce();
+        this.saveToLocalStorage();
+    },
+    
+    // Remove item from cart
+    removeItem: function(id) {
+        this.items = this.items.filter(item => item.id !== id);
+        this.updateTotal();
+        this.updateCartUI();
+        this.saveToLocalStorage();
+    },
+    
+    // Update item quantity
+    updateQuantity: function(id, quantity) {
+        const item = this.items.find(item => item.id === id);
+        if (item) {
+            if (quantity <= 0) {
+                this.removeItem(id);
+            } else {
+                item.quantity = quantity;
+                this.updateTotal();
+                this.updateCartUI();
+                this.saveToLocalStorage();
+            }
+        }
+    },
+    
+    // Calculate cart total
+    updateTotal: function() {
+        this.total = this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    },
+    
+    // Update cart UI elements
+    updateCartUI: function() {
+        this.updateBadge();
+        this.updateDropdown();
+    },
+    
+    // Update cart badge
+    updateBadge: function() {
+        const badge = document.getElementById('cartBadge');
+        const totalItems = this.items.reduce((sum, item) => sum + item.quantity, 0);
+        
+        badge.textContent = totalItems;
+        
+        if (totalItems > 0) {
+            badge.classList.add('active');
+        } else {
+            badge.classList.remove('active');
+        }
+    },
+    
+    // Animate badge when item is added
+    animateBadge: function() {
+        const badge = document.getElementById('cartBadge');
+        badge.classList.add('pulse');
+        setTimeout(() => {
+            badge.classList.remove('pulse');
+        }, 600);
+    },
+    
+    // Animate cart icon bounce
+    animateCartBounce: function() {
+        const cartBtn = document.getElementById('cartToggle');
+        cartBtn.classList.add('bounce');
+        setTimeout(() => {
+            cartBtn.classList.remove('bounce');
+        }, 600);
+    },
+    
+    // Update cart dropdown content
+    updateDropdown: function() {
+        const cartItems = document.getElementById('cartItems');
+        const cartTotal = document.getElementById('cartTotal');
+        
+        cartTotal.textContent = this.total.toFixed(2);
+        
+        if (this.items.length === 0) {
+            cartItems.innerHTML = '<div class="empty-cart"><p>Your cart is empty</p></div>';
+            return;
+        }
+        
+        cartItems.innerHTML = this.items.map(item => `
+            <div class="cart-item">
+                <div class="cart-item-img">${item.image}</div>
+                <div class="cart-item-details">
+                    <div class="cart-item-name">${item.name}</div>
+                    <div class="cart-item-price">${item.price.toFixed(2)}</div>
+                </div>
+                <div class="cart-item-quantity">
+                    <button class="quantity-btn" onclick="cart.updateQuantity(${item.id}, ${item.quantity - 1})">-</button>
+                    <span class="quantity-display">${item.quantity}</span>
+                    <button class="quantity-btn" onclick="cart.updateQuantity(${item.id}, ${item.quantity + 1})">+</button>
+                </div>
+                <div class="cart-item-remove" onclick="cart.removeItem(${item.id})">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </div>
+            </div>
+        `).join('');
+    },
+    
+    // Save cart to localStorage
+    saveToLocalStorage: function() {
+        localStorage.setItem('butlerCart', JSON.stringify({
+            items: this.items,
+            total: this.total
+        }));
+    },
+    
+    // Load cart from localStorage
+    loadFromLocalStorage: function() {
+        const savedCart = localStorage.getItem('butlerCart');
+        if (savedCart) {
+            const parsedCart = JSON.parse(savedCart);
+            this.items = parsedCart.items || [];
+            this.total = parsedCart.total || 0;
+            this.updateCartUI();
+        }
+    },
+    
+    // Clear all items from cart
+    clearCart: function() {
+        this.items = [];
+        this.total = 0;
+        this.updateCartUI();
+        this.saveToLocalStorage();
+    }
+};
 
 // Filter toggle functionality
 function toggleFilter(header) {
@@ -166,16 +343,43 @@ function renderProducts() {
 
 // Add to cart function
 function addToCart(id, name, price) {
-    console.log(`Added to cart: ${name} - $${price}`);
-    // Add your cart functionality here
-    // You can integrate this with your existing cart system from script.js
+    cart.addItem(id, name, price);
     
-    // Show a simple notification (you can enhance this)
-    alert(`${name} has been added to your cart!`);
+    // Visual feedback on the button
+    const button = event.target.closest('.add-to-cart');
+    if (button) {
+        button.style.transform = 'scale(0.9)';
+        button.style.backgroundColor = '#a1cce7';
+        setTimeout(() => {
+            button.style.transform = 'scale(1)';
+            button.style.backgroundColor = '#e83e8c';
+        }, 200);
+    }
+    
+    console.log(`Added to cart: ${name} - ${price}`);
 }
+
+// Cart dropdown toggle functionality - Make globally accessible
+window.toggleCartDropdown = function() {
+    const dropdown = document.getElementById('cartDropdown');
+    dropdown.classList.toggle('active');
+};
+
+window.closeCartDropdown = function() {
+    const dropdown = document.getElementById('cartDropdown');
+    dropdown.classList.remove('active');
+};
 
 // Event listeners
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize cart from localStorage
+    cart.loadFromLocalStorage();
+    
+    // Make sure cart functions are globally accessible (redundant but safe)
+    window.cart = cart;
+    window.toggleCartDropdown = toggleCartDropdown;
+    window.closeCartDropdown = closeCartDropdown;
+    
     // Initialize page
     renderProducts();
     
@@ -199,4 +403,36 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('searchBtn').addEventListener('click', function() {
         filterProducts();
     });
+    
+    // Cart dropdown listeners
+    const cartToggle = document.getElementById('cartToggle');
+    const cartClose = document.getElementById('cartClose');
+    const cartDropdown = document.getElementById('cartDropdown');
+    
+    if (cartToggle) {
+        cartToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.toggleCartDropdown();
+        });
+    }
+    
+    if (cartClose) {
+        cartClose.addEventListener('click', function() {
+            window.closeCartDropdown();
+        });
+    }
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.cart-container')) {
+            window.closeCartDropdown();
+        }
+    });
+    
+    // Prevent dropdown from closing when clicking inside it
+    if (cartDropdown) {
+        cartDropdown.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
 });
