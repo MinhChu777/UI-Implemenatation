@@ -1,27 +1,28 @@
-// Wait for the DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Cart functionality
-    const cart = {
+// Enhanced Cart functionality with dropdown - Make it globally accessible
+const cart = {
         items: [],
         total: 0,
         
         // Add item to cart
-        addItem: function(id, name, price, quantity = 1) {
+        addItem: function(id, name, price, image = null) {
             const existingItem = this.items.find(item => item.id === id);
             
             if (existingItem) {
-                existingItem.quantity += quantity;
+                existingItem.quantity += 1;
             } else {
                 this.items.push({
                     id: id,
                     name: name,
                     price: parseFloat(price),
-                    quantity: quantity
+                    quantity: 1,
+                    image: image || 'Product Image'
                 });
             }
             
             this.updateTotal();
-            this.updateCartCount();
+            this.updateCartUI();
+            this.animateBadge();
+            this.animateCartBounce();
             this.showNotification(`${name} added to cart!`);
             this.saveToLocalStorage();
         },
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         removeItem: function(id) {
             this.items = this.items.filter(item => item.id !== id);
             this.updateTotal();
-            this.updateCartCount();
+            this.updateCartUI();
             this.saveToLocalStorage();
             this.showNotification("Item removed from cart!");
         },
@@ -39,10 +40,14 @@ document.addEventListener('DOMContentLoaded', function() {
         updateQuantity: function(id, quantity) {
             const item = this.items.find(item => item.id === id);
             if (item) {
-                item.quantity = quantity;
-                this.updateTotal();
-                this.updateCartCount();
-                this.saveToLocalStorage();
+                if (quantity <= 0) {
+                    this.removeItem(id);
+                } else {
+                    item.quantity = quantity;
+                    this.updateTotal();
+                    this.updateCartUI();
+                    this.saveToLocalStorage();
+                }
             }
         },
         
@@ -51,11 +56,84 @@ document.addEventListener('DOMContentLoaded', function() {
             this.total = this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
         },
         
-        // Update cart count UI
-        updateCartCount: function() {
-            // This would normally update a cart counter element in the header
-            // For this example, we'll just log it to the console
-            console.log(`Cart now has ${this.items.length} items with a total of $${this.total.toFixed(2)}`);
+        // Update cart UI elements
+        updateCartUI: function() {
+            this.updateBadge();
+            this.updateDropdown();
+        },
+        
+        // Update cart badge
+        updateBadge: function() {
+            const badge = document.getElementById('cartBadge');
+            const totalItems = this.items.reduce((sum, item) => sum + item.quantity, 0);
+            
+            badge.textContent = totalItems;
+            
+            if (totalItems > 0) {
+                badge.classList.add('active');
+            } else {
+                badge.classList.remove('active');
+            }
+        },
+        
+        // Animate badge when item is added
+        animateBadge: function() {
+            const badge = document.getElementById('cartBadge');
+            badge.classList.add('pulse');
+            setTimeout(() => {
+                badge.classList.remove('pulse');
+            }, 600);
+        },
+        
+        // Animate cart icon bounce
+        animateCartBounce: function() {
+            const cartBtn = document.getElementById('cartToggle');
+            cartBtn.classList.add('bounce');
+            setTimeout(() => {
+                cartBtn.classList.remove('bounce');
+            }, 600);
+        },
+        
+        // Update cart dropdown content
+        updateDropdown: function() {
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            
+            cartTotal.textContent = this.total.toFixed(2);
+            
+            if (this.items.length === 0) {
+                cartItems.innerHTML = '<div class="empty-cart"><p>Your cart is empty</p></div>';
+                return;
+            }
+            
+            cartItems.innerHTML = this.items.map(item => `
+                <div class="cart-item">
+                    <div class="cart-item-img">${item.image}</div>
+                    <div class="cart-item-details">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-price">${item.price.toFixed(2)}</div>
+                    </div>
+                    <div class="cart-item-quantity">
+                        <button class="quantity-btn" onclick="window.cart.updateQuantity(${item.id}, ${item.quantity - 1})">-</button>
+                        <span class="quantity-display">${item.quantity}</span>
+                        <button class="quantity-btn" onclick="window.cart.updateQuantity(${item.id}, ${item.quantity + 1})">+</button>
+                    </div>
+                    <div class="cart-item-remove" onclick="window.cart.removeItem(${item.id})">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </div>
+                </div>
+            `).join('') + `
+                <div style="padding: 15px 20px; border-top: 1px solid rgba(232, 62, 140, 0.1);">
+                    <button onclick="window.cart.clearCart()" style="width: 100%; padding: 8px; background: transparent; border: 1px solid rgba(232, 62, 140, 0.3); color: #e83e8c; cursor: pointer; font-size: 0.85rem; transition: all 0.3s ease;" 
+                    onmouseover="this.style.backgroundColor='rgba(232, 62, 140, 0.1)'" 
+                    onmouseout="this.style.backgroundColor='transparent'">
+                        CLEAR CART
+                    </button>
+                </div>
+            `;
         },
         
         // Show notification
@@ -86,11 +164,59 @@ document.addEventListener('DOMContentLoaded', function() {
                 const parsedCart = JSON.parse(savedCart);
                 this.items = parsedCart.items || [];
                 this.total = parsedCart.total || 0;
-                this.updateCartCount();
+                this.updateCartUI();
             }
+        },
+        
+        // Clear all items from cart
+        clearCart: function() {
+            this.items = [];
+            this.total = 0;
+            this.updateCartUI();
+            this.saveToLocalStorage();
+            this.showNotification("Cart cleared!");
         }
-    };
+};
+
+
+// Make cart globally accessible
+window.cart = cart;
+
+// Add to cart function (global)
+window.addToCart = function(id, name, price) {
+    // Add to cart (this will trigger both badge pulse and cart bounce)
+    cart.addItem(id, name, price);
     
+    // Visual feedback on the product card button
+    const button = event.target.closest('.add-to-cart');
+    if (button) {
+        button.style.transform = 'scale(0.9)';
+        button.style.backgroundColor = '#a1cce7';
+        setTimeout(() => {
+            button.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                button.style.transform = 'scale(1)';
+                button.style.backgroundColor = '#e83e8c';
+            }, 100);
+        }, 150);
+    }
+    
+    console.log(`Added to cart: ${name} - ${price}`);
+};
+
+// Cart dropdown toggle functionality - Make globally accessible
+window.toggleCartDropdown = function() {
+    const dropdown = document.getElementById('cartDropdown');
+    dropdown.classList.toggle('active');
+};
+
+window.closeCartDropdown = function() {
+    const dropdown = document.getElementById('cartDropdown');
+    dropdown.classList.remove('active');
+};
+
+// Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
     // Initialize cart from localStorage
     cart.loadFromLocalStorage();
     
@@ -201,21 +327,16 @@ document.addEventListener('DOMContentLoaded', function() {
         function selectSuggestion(productName) {
             searchInput.value = productName;
             hideSuggestions();
-            // You can add logic here to perform the actual search or redirect
             console.log('Selected product:', productName);
-            
-            // Optional: trigger search automatically
             performSearch(productName);
         }
         
         // Function to perform search (customize this for your needs)
         function performSearch(query) {
             console.log('Searching for:', query);
-            // Add your search logic here
-            // For example, filter products on the page, redirect to search results, etc.
-            
-            // Example: Show notification
             cart.showNotification(`Searching for "${query}"...`);
+            // Redirect to products page with search parameter
+            window.location.href = `products.html?search=${encodeURIComponent(query)}`;
         }
         
         // Event listeners
@@ -315,25 +436,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize search suggestions
     initializeSearchSuggestions();
     
-    // Add to cart functionality
-    document.querySelectorAll('.add-to-cart').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const id = this.getAttribute('data-id');
-            const name = this.getAttribute('data-name');
-            const price = this.getAttribute('data-price');
-            
-            // Add some animation effect
-            this.classList.add('adding');
-            setTimeout(() => {
-                this.classList.remove('adding');
-            }, 500);
-            
-            cart.addItem(id, name, price);
-        });
-    });
-    
     // Product image hover effect (optional enhancement)
     document.querySelectorAll('.product-card').forEach(card => {
         const img = card.querySelector('.product-img img');
@@ -357,11 +459,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const emailInput = this.querySelector('input[type="email"]');
             const email = emailInput.value;
             
-            // In a real application, you would send this to a server
-            // Here we'll just show a notification
             cart.showNotification(`Thank you! ${email} has been subscribed to our newsletter.`);
-            
-            // Reset the form
             this.reset();
         });
     }
@@ -372,11 +470,42 @@ document.addEventListener('DOMContentLoaded', function() {
         chatBtn.addEventListener('click', function() {
             cart.showNotification('Chat feature coming soon!');
             
-            // Add a little animation
             this.classList.add('pulse');
             setTimeout(() => {
                 this.classList.remove('pulse');
             }, 300);
+        });
+    }
+    
+    // Cart dropdown listeners
+    const cartToggle = document.getElementById('cartToggle');
+    const cartClose = document.getElementById('cartClose');
+    const cartDropdown = document.getElementById('cartDropdown');
+    
+    if (cartToggle) {
+        cartToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.toggleCartDropdown();
+        });
+    }
+    
+    if (cartClose) {
+        cartClose.addEventListener('click', function() {
+            window.closeCartDropdown();
+        });
+    }
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.cart-container')) {
+            window.closeCartDropdown();
+        }
+    });
+    
+    // Prevent dropdown from closing when clicking inside it
+    if (cartDropdown) {
+        cartDropdown.addEventListener('click', function(e) {
+            e.stopPropagation();
         });
     }
     
@@ -475,7 +604,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Animate on page load
     animateHeroTitle();
     
-    
     window.addEventListener('scroll', function() {
         const scrollPosition = window.scrollY;
         const heroElements = document.querySelector('.hero-content');
@@ -486,10 +614,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    
     window.updateSearchData = function(newProducts) {
         // This function allows you to update the search data dynamically
-        // Call this when you load products from an API
         if (window.sampleProducts) {
             window.sampleProducts.length = 0;
             window.sampleProducts.push(...newProducts);
