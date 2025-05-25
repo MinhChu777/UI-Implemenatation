@@ -18,7 +18,7 @@
             <nav class="main-nav">
                 <ul>
                     <li><a href="Homepage.html" class="active">HOME</a></li>
-                    <li><a href="#">PRODUCTS</a></li>
+                    <li><a href="products.html">PRODUCTS</a></li>
                     <li><a href="#">ABOUT US</a></li>
                 </ul>
             </nav>
@@ -26,7 +26,7 @@
             <div class="header-right">
                 <div class="search-container">
                     <div class="search-bar">
-                        <input type="text" placeholder="Search something" class="search-input" id="searchInput" autocomplete="off">
+                        <input type="text" placeholder="Search products..." class="search-input" id="searchInput" autocomplete="off">
                         <button class="search-btn" type="button" id="searchBtn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="11" cy="11" r="8"></circle>
@@ -48,13 +48,35 @@
                             <circle cx="12" cy="7" r="4"></circle>
                         </svg>
                     </a>
-                    <a href="#" class="cart-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="9" cy="21" r="1"></circle>
-                            <circle cx="20" cy="21" r="1"></circle>
-                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                        </svg>
-                    </a>
+                    <div class="cart-container">
+                        <a href="#" class="cart-btn" id="cartToggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            <span class="cart-badge" id="cartBadge">0</span>
+                        </a>
+                        
+                        <!-- Cart Dropdown -->
+                        <div class="cart-dropdown" id="cartDropdown">
+                            <div class="cart-header">
+                                <h3>Shopping Cart</h3>
+                                <span class="cart-close" id="cartClose">&times;</span>
+                            </div>
+                            <div class="cart-items" id="cartItems">
+                                <div class="empty-cart">
+                                    <p>Your cart is empty</p>
+                                </div>
+                            </div>
+                            <div class="cart-footer">
+                                <div class="cart-total">
+                                    <strong>Total: $<span id="cartTotal">0.00</span></strong>
+                                </div>
+                                <button class="checkout-btn">CHECKOUT</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -73,7 +95,7 @@
                         </div>
                         
                         <div class="cta-container">
-                            <a href="#" class="btn cta-btn">GET STARTED</a>
+                            <a href="products.html" class="btn cta-btn">GET STARTED</a>
                         </div>
                     </div>
                     
@@ -162,13 +184,13 @@
                             <p class="product-type">Basketball Cards</p>
                             <div class="product-pricing">
                                 <span class="price">$119.99</span>
-                                <a href="#" class="add-to-cart" data-id="1" data-name="NBA Hoops 2023-24" data-price="119.99">
+                                <div class="add-to-cart" onclick="addToCart(1, 'NBA Hoops 2023-24', 119.99)">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <circle cx="9" cy="21" r="1"></circle>
                                         <circle cx="20" cy="21" r="1"></circle>
                                         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                                     </svg>
-                                </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -182,13 +204,13 @@
                             <p class="product-type">NBA Trading Cards</p>
                             <div class="product-pricing">
                                 <span class="price">$299.99</span>
-                                <a href="#" class="add-to-cart" data-id="2" data-name="Panini Spectra 2023" data-price="299.99">
+                                <div class="add-to-cart" onclick="addToCart(2, 'Panini Spectra 2023', 299.99)">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <circle cx="9" cy="21" r="1"></circle>
                                         <circle cx="20" cy="21" r="1"></circle>
                                         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                                     </svg>
-                                </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -202,13 +224,13 @@
                             <p class="product-type">Basketball Cards</p>
                             <div class="product-pricing">
                                 <span class="price">$159.99</span>
-                                <a href="#" class="add-to-cart" data-id="3" data-name="Donruss Basketball 2023" data-price="159.99">
+                                <div class="add-to-cart" onclick="addToCart(3, 'Donruss Basketball 2023', 159.99)">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <circle cx="9" cy="21" r="1"></circle>
                                         <circle cx="20" cy="21" r="1"></circle>
                                         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                                     </svg>
-                                </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -222,21 +244,19 @@
                             <p class="product-type">NCAA Basketball Cards</p>
                             <div class="product-pricing">
                                 <span class="price">$179.99</span>
-                                <a href="#" class="add-to-cart" data-id="4" data-name="Prizm Draft Picks 2023" data-price="179.99">
+                                <div class="add-to-cart" onclick="addToCart(4, 'Prizm Draft Picks 2023', 179.99)">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <circle cx="9" cy="21" r="1"></circle>
                                         <circle cx="20" cy="21" r="1"></circle>
                                         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                                     </svg>
-                                </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
-        
         
         <!-- Newsletter Section -->
         <section class="newsletter">
