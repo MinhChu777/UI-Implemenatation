@@ -704,6 +704,7 @@ header {
     gap: 10px;
     align-items: center;
     margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .price-input {
