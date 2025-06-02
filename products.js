@@ -19,32 +19,32 @@ window.forceClearCart = function() {
     console.log('Cart force cleared!');
 };
 
-// Sample product data - Updated with actual products and images
+// Sample product data - Updated with actual products, images, and detail page URLs
 const products = [
-    { id: 1, name: "2023-24 Panini NBA Hoops Basketball Hobby Box", type: "NBA Trading Cards", price: 119.99, brand: "Panini", sport: "basketball", productType: "hobby", availability: "instock", image: "hoops23-24.png" },
-    { id: 2, name: "2023-24 Spectra Basketball Hobby International Box", type: "NBA Trading Cards", price: 229.99, brand: "Panini", sport: "basketball", productType: "hobby", availability: "instock", image: "spectra23-24.png" },
-    { id: 3, name: "2024-25 Donruss Basketball Hobby Box", type: "NBA Trading Cards", price: 159.99, brand: "Panini", sport: "basketball", productType: "hobby", availability: "instock", image: "donruss24-25.png" },
-    { id: 4, name: "2024-25 Panini Select Basketball Hobby Box", type: "NBA Trading Cards", price: 799.99, brand: "Panini", sport: "basketball", productType: "hobby", availability: "preorder", image: "select24-25.png" },
-    { id: 5, name: "2023-24 Premium NBA Basketball Blaster Box", type: "NBA Trading Cards", price: 110.00, brand: "Panini", sport: "basketball", productType: "blaster", availability: "instock", image: "premium23-24.png" },
-    { id: 6, name: "2021-22 Panini Immaculate NBA Hobby Box", type: "NBA Trading Cards", price: 2999.95, brand: "Panini", sport: "basketball", productType: "hobby", availability: "outofstock", image: "immaculate21-22.png" },
-    { id: 7, name: "2024-25 Panini NBA Basketball Prizm 12-Card Hobby Pack", type: "NBA Trading Cards", price: 120.00, brand: "Panini", sport: "basketball", productType: "pack", availability: "instock", image: "prizm24-25.png" },
-    { id: 8, name: "Upper Deck SE 1993-94 East Pack", type: "NBA Trading Cards", price: 15.00, brand: "Upper Deck", sport: "basketball", productType: "pack", availability: "instock", image: "upperdeck93-94.png" },
-    { id: 9, name: "1993/94 Upper Deck Series 1 Basketball Hobby Box", type: "NBA Trading Cards", price: 449.99, brand: "Upper Deck", sport: "basketball", productType: "hobby", availability: "instock", image: "upperdeck93-94-box.png" },
-    { id: 10, name: "2024-25 Panini Origins Basketball H2 Box", type: "NBA Trading Cards", price: 249.99, brand: "Panini", sport: "basketball", productType: "blaster", availability: "instock", image: "origins24-25.png" },
-    { id: 11, name: "2024 Prizm Draft Picks Basketball", type: "NCAA Basketball Cards", price: 179.99, brand: "Panini", sport: "basketball", productType: "hobby", availability: "instock", image: "prizm-draft24.png" },
-    { id: 12, name: "2024 Topps Resurgence Football Mega Box", type: "Football Cards", price: 99.99, brand: "Topps", sport: "football", productType: "blaster", availability: "preorder", image: "resurgence24.png" },
-    { id: 13, name: "2024 Topps Cosmic Chrome Football Hobby Box", type: "Football Cards", price: 629.99, brand: "Topps", sport: "football", productType: "hobby", availability: "preorder", image: "cosmic-chrome24.png" },
-    { id: 14, name: "2024-25 Topps UEFA Club Competition Chrome Soccer Blaster Box", type: "Soccer Cards", price: 54.99, brand: "Topps", sport: "soccer", productType: "blaster", availability: "instock", image: "uefa24-25.png" },
-    { id: 15, name: "2021-22 Panini NBA Hoops 8-Card Hobby Pack", type: "NBA Trading Cards", price: 19.99, brand: "Panini", sport: "basketball", productType: "pack", availability: "instock", image: "hoops21-22-pack.png" },
-    { id: 16, name: "2025 Topps Chrome Black Baseball Hobby box", type: "Baseball Cards", price: 599.99, brand: "Topps", sport: "baseball", productType: "hobby", availability: "instock", image: "chrome-black25.png" },
-    { id: 17, name: "2024 Panini Select Baseball Blaster Box", type: "Baseball Cards", price: 45.99, brand: "Panini", sport: "baseball", productType: "blaster", availability: "preorder", image: "select-baseball24.png" },
-    { id: 18, name: "2022 Panini Prizm FIFA World Cup Soccer Hobby Box", type: "Soccer Cards", price: 999.99, brand: "Panini", sport: "soccer", productType: "hobby", availability: "instock", image: "fifa-worldcup22.png" },
-    { id: 19, name: "2024-25 Topps Soccer Real Madrid Fan Set Box", type: "Soccer Cards", price: 44.99, brand: "Topps", sport: "soccer", productType: "blaster", availability: "instock", image: "real-madrid24-25.png" },
-    { id: 20, name: "2025-26 Upper Deck Artifacts Hockey Hobby Box", type: "Hockey Cards", price: 199.99, brand: "Upper Deck", sport: "hockey", productType: "hobby", availability: "preorder", image: "artifacts25-26.png" },
-    { id: 21, name: "2024-25 Upper Deck Series 1 Hockey Blaster Box", type: "Hockey Cards", price: 39.99, brand: "Upper Deck", sport: "hockey", productType: "blaster", availability: "instock", image: "hockey-series24-25.png" },
-    { id: 22, name: "2024-25 Topps Chrome Basketball 8-Pack Blaster Box", type: "NBA Trading Cards", price: 49.99, brand: "Topps", sport: "basketball", productType: "blaster", availability: "preorder", image: "topps-chrome24-25.png" },
-    { id: 23, name: "2015-16 Panini Donruss Basketball Hobby 20-Box Case", type: "NBA Trading Cards", price: 14999.99, brand: "Panini", sport: "basketball", productType: "case", availability: "instock", image: "donruss15-16-case.png" },
-    { id: 24, name: "2023 Topps Chrome Update Series Baseball Jumbo Pack", type: "Baseball Cards", price: 49.99, brand: "Topps", sport: "baseball", productType: "pack", availability: "instock", image: "chrome-update23.png" }
+    { id: 1, name: "2023-24 Panini NBA Hoops Basketball Hobby Box", type: "NBA Trading Cards", price: 119.99, brand: "Panini", sport: "basketball", productType: "hobby", availability: "instock", image: "hoops23-24.png", detailPage: "hoops-23-24.html" },
+    { id: 2, name: "2023-24 Spectra Basketball Hobby International Box", type: "NBA Trading Cards", price: 229.99, brand: "Panini", sport: "basketball", productType: "hobby", availability: "instock", image: "spectra23-24.png", detailPage: "spectra-23-24.html" },
+    { id: 3, name: "2024-25 Donruss Basketball Hobby Box", type: "NBA Trading Cards", price: 159.99, brand: "Panini", sport: "basketball", productType: "hobby", availability: "instock", image: "donruss24-25.png", detailPage: "donruss-24-25.html" },
+    { id: 4, name: "2024-25 Panini Select Basketball Hobby Box", type: "NBA Trading Cards", price: 799.99, brand: "Panini", sport: "basketball", productType: "hobby", availability: "preorder", image: "select24-25.png", detailPage: "select-24-25.html" },
+    { id: 5, name: "2023-24 Premium NBA Basketball Blaster Box", type: "NBA Trading Cards", price: 110.00, brand: "Panini", sport: "basketball", productType: "blaster", availability: "instock", image: "premium23-24.png", detailPage: "premium-23-24.html" },
+    { id: 6, name: "2021-22 Panini Immaculate NBA Hobby Box", type: "NBA Trading Cards", price: 2999.95, brand: "Panini", sport: "basketball", productType: "hobby", availability: "outofstock", image: "immaculate21-22.png", detailPage: "immaculate-21-22.html" },
+    { id: 7, name: "2024-25 Panini NBA Basketball Prizm 12-Card Hobby Pack", type: "NBA Trading Cards", price: 120.00, brand: "Panini", sport: "basketball", productType: "pack", availability: "instock", image: "prizm24-25.png", detailPage: "prizm-24-25.html" },
+    { id: 8, name: "Upper Deck SE 1993-94 East Pack", type: "NBA Trading Cards", price: 15.00, brand: "Upper Deck", sport: "basketball", productType: "pack", availability: "instock", image: "upperdeck93-94.png", detailPage: "upperdeck-93-94.html" },
+    { id: 9, name: "1993/94 Upper Deck Series 1 Basketball Hobby Box", type: "NBA Trading Cards", price: 449.99, brand: "Upper Deck", sport: "basketball", productType: "hobby", availability: "instock", image: "upperdeck93-94-box.png", detailPage: "upperdeck-93-94-box.html" },
+    { id: 10, name: "2024-25 Panini Origins Basketball H2 Box", type: "NBA Trading Cards", price: 249.99, brand: "Panini", sport: "basketball", productType: "blaster", availability: "instock", image: "origins24-25.png", detailPage: "origins-24-25.html" },
+    { id: 11, name: "2024 Prizm Draft Picks Basketball", type: "NCAA Basketball Cards", price: 179.99, brand: "Panini", sport: "basketball", productType: "hobby", availability: "instock", image: "prizm-draft24.png", detailPage: "prizm-draft-24.html" },
+    { id: 12, name: "2024 Topps Resurgence Football Mega Box", type: "Football Cards", price: 99.99, brand: "Topps", sport: "football", productType: "blaster", availability: "preorder", image: "resurgence24.png", detailPage: "resurgence-24.html" },
+    { id: 13, name: "2024 Topps Cosmic Chrome Football Hobby Box", type: "Football Cards", price: 629.99, brand: "Topps", sport: "football", productType: "hobby", availability: "preorder", image: "cosmic-chrome24.png", detailPage: "cosmic-chrome-24.html" },
+    { id: 14, name: "2024-25 Topps UEFA Club Competition Chrome Soccer Blaster Box", type: "Soccer Cards", price: 54.99, brand: "Topps", sport: "soccer", productType: "blaster", availability: "instock", image: "uefa24-25.png", detailPage: "uefa-24-25.html" },
+    { id: 15, name: "2021-22 Panini NBA Hoops 8-Card Hobby Pack", type: "NBA Trading Cards", price: 19.99, brand: "Panini", sport: "basketball", productType: "pack", availability: "instock", image: "hoops21-22-pack.png", detailPage: "hoops-21-22-pack.html" },
+    { id: 16, name: "2025 Topps Chrome Black Baseball Hobby box", type: "Baseball Cards", price: 599.99, brand: "Topps", sport: "baseball", productType: "hobby", availability: "instock", image: "chrome-black25.png", detailPage: "chrome-black-25.html" },
+    { id: 17, name: "2024 Panini Select Baseball Blaster Box", type: "Baseball Cards", price: 45.99, brand: "Panini", sport: "baseball", productType: "blaster", availability: "preorder", image: "select-baseball24.png", detailPage: "select-baseball-24.html" },
+    { id: 18, name: "2022 Panini Prizm FIFA World Cup Soccer Hobby Box", type: "Soccer Cards", price: 999.99, brand: "Panini", sport: "soccer", productType: "hobby", availability: "instock", image: "fifa-worldcup22.png", detailPage: "fifa-worldcup-22.html" },
+    { id: 19, name: "2024-25 Topps Soccer Real Madrid Fan Set Box", type: "Soccer Cards", price: 44.99, brand: "Topps", sport: "soccer", productType: "blaster", availability: "instock", image: "real-madrid24-25.png", detailPage: "real-madrid-24-25.html" },
+    { id: 20, name: "2025-26 Upper Deck Artifacts Hockey Hobby Box", type: "Hockey Cards", price: 199.99, brand: "Upper Deck", sport: "hockey", productType: "hobby", availability: "preorder", image: "artifacts25-26.png", detailPage: "artifacts-25-26.html" },
+    { id: 21, name: "2024-25 Upper Deck Series 1 Hockey Blaster Box", type: "Hockey Cards", price: 39.99, brand: "Upper Deck", sport: "hockey", productType: "blaster", availability: "instock", image: "hockey-series24-25.png", detailPage: "hockey-series-24-25.html" },
+    { id: 22, name: "2024-25 Topps Chrome Basketball 8-Pack Blaster Box", type: "NBA Trading Cards", price: 49.99, brand: "Topps", sport: "basketball", productType: "blaster", availability: "preorder", image: "topps-chrome24-25.png", detailPage: "topps-chrome-24-25.html" },
+    { id: 23, name: "2015-16 Panini Donruss Basketball Hobby 20-Box Case", type: "NBA Trading Cards", price: 14999.99, brand: "Panini", sport: "basketball", productType: "case", availability: "instock", image: "donruss15-16-case.png", detailPage: "donruss-15-16-case.html" },
+    { id: 24, name: "2023 Topps Chrome Update Series Baseball Jumbo Pack", type: "Baseball Cards", price: 49.99, brand: "Topps", sport: "baseball", productType: "pack", availability: "instock", image: "chrome-update23.png", detailPage: "chrome-update-23.html" }
 ];
 
 let filteredProducts = [...products];
@@ -406,7 +406,7 @@ function renderProducts() {
         }
         
         return `
-            <div class="product-card" data-availability="${product.availability}">
+            <div class="product-card" data-availability="${product.availability}" onclick="goToProductDetail(${product.id})" style="cursor: pointer;">
                 <div class="product-img">
                     <div class="sport-icon">${sportIcon}</div>
                     <div class="availability-badge ${availabilityClass}">${availabilityBadge}</div>
@@ -426,7 +426,7 @@ function renderProducts() {
                     <div class="product-pricing">
                         <span class="price">$${product.price.toFixed(2)}</span>
                         <div class="add-to-cart ${product.availability === 'outofstock' ? 'disabled' : ''}" 
-                             onclick="${product.availability === 'outofstock' ? 'return false;' : `addToCart(${product.id}, '${product.name.replace(/'/g, "\\'")}', ${product.price}, '${product.image}')`}">
+                             onclick="${product.availability === 'outofstock' ? 'return false;' : `event.stopPropagation(); addToCart(${product.id}, '${product.name.replace(/'/g, "\\'")}', ${product.price}, '${product.image}')`}">
                             ${product.availability === 'outofstock' ? 
                                 '<span style="font-size: 0.7rem;">OUT</span>' :
                                 `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -459,6 +459,18 @@ function addToCart(id, name, price, image) {
     }
     
     console.log(`Added to cart: ${name} - $${price}`);
+}
+
+// Navigate to product detail page
+function goToProductDetail(productId) {
+    const product = products.find(p => p.id === productId);
+    if (product && product.detailPage) {
+        window.location.href = product.detailPage;
+    } else {
+        console.warn('Product detail page not found for product ID:', productId);
+        // Fallback to a generic detail page with URL parameter
+        window.location.href = `product-detail.html?id=${productId}`;
+    }
 }
 
 // Cart dropdown toggle functionality - Make globally accessible
@@ -547,6 +559,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.toggleCartDropdown = toggleCartDropdown;
     window.closeCartDropdown = closeCartDropdown;
     window.clearAllFilters = clearAllFilters;
+    window.goToProductDetail = goToProductDetail;
     
     // Initialize page
     renderProducts();
@@ -676,4 +689,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     console.log('Products page initialized with', products.length, 'products');
+    
+    // Log all product detail page URLs for reference
+    console.log('Product Detail Pages:');
+    products.forEach(product => {
+        console.log(`${product.id}: ${product.name} → ${product.detailPage}`);
+    });
 });
