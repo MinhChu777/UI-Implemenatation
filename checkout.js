@@ -1,4 +1,4 @@
-// Checkout Page JavaScript - Professional Implementation
+// Checkout Page JavaScript
 
 let checkoutCart = {
     items: [],
@@ -8,14 +8,11 @@ let checkoutCart = {
     total: 0
 };
 
-// Tax rate (10% GST for Australia)
-const TAX_RATE = 0.10;
-
 // Shipping rates
 const SHIPPING_RATES = {
-    standard: 0,
+    standard: 9.00,
     express: 15.00,
-    overnight: 35.00
+    international: 25.00
 };
 
 // Load cart from localStorage or products.js cart
@@ -46,8 +43,8 @@ function calculateTotals() {
     checkoutCart.shipping = selectedShipping ? 
         SHIPPING_RATES[selectedShipping.value] : SHIPPING_RATES.standard;
     
-    // Calculate tax on subtotal + shipping
-    checkoutCart.tax = (checkoutCart.subtotal + checkoutCart.shipping) * TAX_RATE;
+    // No tax calculation for now (can be added later)
+    checkoutCart.tax = 0;
     
     // Calculate final total
     checkoutCart.total = checkoutCart.subtotal + checkoutCart.shipping + checkoutCart.tax;
@@ -59,54 +56,44 @@ function calculateTotals() {
 function updateTotalsDisplay() {
     const subtotalEl = document.getElementById('subtotalAmount');
     const shippingEl = document.getElementById('shippingAmount');
-    const taxEl = document.getElementById('taxAmount');
     const totalEl = document.getElementById('finalTotal');
     
     if (subtotalEl) subtotalEl.textContent = `$${checkoutCart.subtotal.toFixed(2)}`;
-    if (shippingEl) shippingEl.textContent = checkoutCart.shipping === 0 ? 'FREE' : `$${checkoutCart.shipping.toFixed(2)}`;
-    if (taxEl) taxEl.textContent = `$${checkoutCart.tax.toFixed(2)}`;
+    if (shippingEl) shippingEl.textContent = `$${checkoutCart.shipping.toFixed(2)}`;
     if (totalEl) totalEl.textContent = `$${checkoutCart.total.toFixed(2)}`;
 }
 
 // Update checkout display
 function updateCheckoutDisplay() {
-    const checkoutItemsEl = document.getElementById('checkoutItems');
-    const checkoutContainer = document.querySelector('.checkout-container');
+    const cartItemsSummary = document.getElementById('cartItemsSummary');
+    const checkoutMainContainer = document.querySelector('.checkout-main-container');
     const emptyCheckout = document.getElementById('emptyCheckout');
     
     if (checkoutCart.items.length === 0) {
         // Show empty cart message
-        if (checkoutContainer) checkoutContainer.style.display = 'none';
+        if (checkoutMainContainer) checkoutMainContainer.style.display = 'none';
         if (emptyCheckout) emptyCheckout.style.display = 'flex';
         return;
     }
     
     // Show checkout form
-    if (checkoutContainer) checkoutContainer.style.display = 'grid';
+    if (checkoutMainContainer) checkoutMainContainer.style.display = 'grid';
     if (emptyCheckout) emptyCheckout.style.display = 'none';
     
-    // Render checkout items
-    if (checkoutItemsEl) {
-        checkoutItemsEl.innerHTML = checkoutCart.items.map(item => `
-            <div class="checkout-item">
-                <div class="checkout-item-img">
+    // Render cart items summary
+    if (cartItemsSummary) {
+        cartItemsSummary.innerHTML = checkoutCart.items.map(item => `
+            <div class="cart-item-summary">
+                <div class="cart-item-image">
                     <img src="${item.image}" alt="${item.name}" style="width: 100%; height: 100%; object-fit: cover;" 
                          onerror="this.style.display='none'; this.parentElement.innerHTML='IMG';">
                 </div>
-                <div class="checkout-item-details">
-                    <div class="checkout-item-name">${item.name}</div>
-                    <div class="checkout-item-price">$${item.price.toFixed(2)} each</div>
-                </div>
-                <div class="checkout-item-quantity">
-                    <button class="checkout-quantity-btn" onclick="updateCheckoutQuantity(${item.id}, ${item.quantity - 1})">−</button>
-                    <span class="checkout-quantity-display">${item.quantity}</span>
-                    <button class="checkout-quantity-btn" onclick="updateCheckoutQuantity(${item.id}, ${item.quantity + 1})">+</button>
-                </div>
-                <div class="checkout-item-remove" onclick="removeCheckoutItem(${item.id})">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
+                <div class="cart-item-details">
+                    <div class="cart-item-name">${item.name}</div>
+                    <div class="cart-item-meta">
+                        <span class="cart-item-quantity">Qty: ${item.quantity}</span>
+                        <span class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</span>
+                    </div>
                 </div>
             </div>
         `).join('');
@@ -115,28 +102,20 @@ function updateCheckoutDisplay() {
     calculateTotals();
 }
 
-// Update quantity in checkout
-function updateCheckoutQuantity(id, newQuantity) {
-    const item = checkoutCart.items.find(item => item.id === id);
-    if (item) {
-        if (newQuantity <= 0) {
-            removeCheckoutItem(id);
-        } else {
-            item.quantity = newQuantity;
-            saveCheckoutCart();
-            updateCheckoutDisplay();
-            showNotification('Quantity updated');
-        }
+// Express payment processing
+function processExpressPayment(method) {
+    if (checkoutCart.items.length === 0) {
+        showNotification('Your cart is empty');
+        return;
     }
-}
-
-// Remove item from checkout
-function removeCheckoutItem(id) {
-    checkoutCart.items = checkoutCart.items.filter(item => item.id !== id);
-    saveCheckoutCart();
-    updateCheckoutDisplay();
-    updateGlobalCart();
-    showNotification('Item removed from cart');
+    
+    showNotification(`Processing ${method.charAt(0).toUpperCase() + method.slice(1)} payment...`);
+    
+    // Simulate express payment processing
+    setTimeout(() => {
+        const orderNumber = generateOrderNumber();
+        processOrderSuccess(orderNumber, method);
+    }, 2000);
 }
 
 // Save checkout cart to localStorage
@@ -168,9 +147,17 @@ function formatCardNumber(input) {
 // Format expiry date input
 function formatExpiryDate(input) {
     let value = input.value.replace(/\D/g, '');
-    if (value.length >= 2) {
-        value = value.substring(0, 2) + '/' + value.substring(2, 4);
+    
+    // Limit to 4 digits (MMYY)
+    if (value.length > 4) {
+        value = value.substring(0, 4);
     }
+    
+    // Format as MM/YY (without spaces for simplicity)
+    if (value.length >= 2) {
+        value = value.substring(0, 2) + '/' + value.substring(2);
+    }
+    
     input.value = value;
 }
 
@@ -185,22 +172,27 @@ function validateCheckoutForm() {
             field.style.borderColor = '#e74c3c';
             isValid = false;
         } else {
-            field.style.borderColor = 'rgba(232, 62, 140, 0.3)';
+            field.style.borderColor = 'rgba(232, 62, 140, 0.2)';
         }
     });
     
-    // Validate email format
+    // Validate email format (required field)
     const emailField = document.getElementById('email');
-    if (emailField && emailField.value) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(emailField.value)) {
+    if (emailField) {
+        if (!emailField.value.trim()) {
             emailField.style.borderColor = '#e74c3c';
             isValid = false;
+        } else {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailField.value)) {
+                emailField.style.borderColor = '#e74c3c';
+                isValid = false;
+            }
         }
     }
     
     // Validate credit card if selected
-    const creditCardSelected = document.getElementById('creditCard').checked;
+    const creditCardSelected = document.getElementById('creditCard')?.checked;
     if (creditCardSelected) {
         const cardNumber = document.getElementById('cardNumber');
         const expiryDate = document.getElementById('expiryDate');
@@ -212,7 +204,7 @@ function validateCheckoutForm() {
             isValid = false;
         }
         
-        if (!expiryDate.value || expiryDate.value.length !== 5) {
+        if (!expiryDate.value || expiryDate.value.replace(/\//g, '').length < 4) {
             expiryDate.style.borderColor = '#e74c3c';
             isValid = false;
         }
@@ -248,14 +240,19 @@ function processOrder(formData) {
     
     // Simulate order processing
     setTimeout(() => {
-        // Clear cart
-        checkoutCart.items = [];
-        localStorage.removeItem('butlerCart');
-        updateGlobalCart();
-        
-        // Show success message
-        showOrderSuccess(orderData.orderNumber);
+        processOrderSuccess(orderData.orderNumber, 'credit card');
     }, 2000);
+}
+
+// Process successful order
+function processOrderSuccess(orderNumber, paymentMethod) {
+    // Clear cart
+    checkoutCart.items = [];
+    localStorage.removeItem('butlerCart');
+    updateGlobalCart();
+    
+    // Show success message
+    showOrderSuccess(orderNumber, paymentMethod);
 }
 
 // Generate order number
@@ -266,7 +263,7 @@ function generateOrderNumber() {
 }
 
 // Show order success
-function showOrderSuccess(orderNumber) {
+function showOrderSuccess(orderNumber, paymentMethod) {
     const successHtml = `
         <div class="order-success">
             <div class="success-content">
@@ -275,12 +272,21 @@ function showOrderSuccess(orderNumber) {
                     <polyline points="22,4 12,14.01 9,11.01"></polyline>
                 </svg>
                 <h2>Order Placed Successfully!</h2>
-                <p>Thank you for your order. Your order number is:</p>
-                <div class="order-number">${orderNumber}</div>
-                <p>You will receive a confirmation email shortly.</p>
-                <button class="continue-shopping-btn" onclick="window.location.href='products.html'">
-                    Continue Shopping
-                </button>
+                <p>Thank you for your order. Your order has been processed successfully.</p>
+                <div class="order-details">
+                    <div class="order-number">Order #${orderNumber}</div>
+                    <div class="payment-method">Paid via ${paymentMethod.charAt(0).toUpperCase() + paymentMethod.slice(1)}</div>
+                    <div class="order-total">Total: $${checkoutCart.total.toFixed(2)}</div>
+                </div>
+                <p>You will receive a confirmation email shortly with your order details.</p>
+                <div class="success-actions">
+                    <button class="continue-shopping-btn" onclick="window.location.href='products.html'">
+                        Continue Shopping
+                    </button>
+                    <button class="track-order-btn" onclick="alert('Order tracking will be available soon!')">
+                        Track Order
+                    </button>
+                </div>
             </div>
         </div>
     `;
@@ -296,26 +302,103 @@ function showOrderSuccess(orderNumber) {
                 justify-content: center;
                 min-height: 60vh;
                 text-align: center;
+                padding: 40px 20px;
+            }
+            .success-content {
+                max-width: 600px;
             }
             .success-content h2 {
                 color: #22c55e;
                 font-size: 2.5rem;
                 margin: 20px 0;
+                font-weight: 700;
             }
             .success-content p {
                 color: rgba(255, 255, 255, 0.8);
                 font-size: 1.1rem;
                 margin: 15px 0;
+                line-height: 1.5;
+            }
+            .order-details {
+                background: rgba(17, 17, 34, 0.8);
+                border: 1px solid rgba(232, 62, 140, 0.2);
+                padding: 30px;
+                margin: 30px 0;
+                backdrop-filter: blur(10px);
             }
             .order-number {
                 background: linear-gradient(135deg, #e83e8c, #a1cce7);
                 color: #ffffff;
                 padding: 15px 30px;
-                font-size: 1.5rem;
+                font-size: 1.3rem;
                 font-weight: 700;
                 letter-spacing: 2px;
-                margin: 25px 0;
+                margin-bottom: 15px;
                 display: inline-block;
+            }
+            .payment-method, .order-total {
+                color: #a1cce7;
+                font-size: 1.1rem;
+                margin: 10px 0;
+                font-weight: 600;
+            }
+            .success-actions {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                margin-top: 30px;
+                flex-wrap: wrap;
+            }
+            .continue-shopping-btn, .track-order-btn {
+                padding: 15px 30px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: all 0.3s ease;
+                border: none;
+                cursor: pointer;
+                font-size: 0.95rem;
+            }
+            .continue-shopping-btn {
+                background: #e83e8c;
+                color: #ffffff;
+            }
+            .track-order-btn {
+                background: transparent;
+                color: #a1cce7;
+                border: 1px solid #a1cce7;
+            }
+            .continue-shopping-btn:hover {
+                background: #a1cce7;
+                color: #050510;
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba(161, 204, 231, 0.4);
+            }
+            .track-order-btn:hover {
+                background: #a1cce7;
+                color: #050510;
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba(161, 204, 231, 0.4);
+            }
+            @media (max-width: 768px) {
+                .success-content h2 {
+                    font-size: 2rem;
+                }
+                .order-details {
+                    padding: 20px;
+                }
+                .order-number {
+                    font-size: 1.1rem;
+                    padding: 12px 20px;
+                }
+                .success-actions {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .continue-shopping-btn, .track-order-btn {
+                    width: 100%;
+                    max-width: 250px;
+                }
             }
         </style>
     `;
@@ -434,11 +517,16 @@ function initializeCheckout() {
                 submitBtn.classList.add('processing');
                 submitBtn.innerHTML = `
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="3"></circle>
-                        <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"></path>
+                        <path d="M21 12a9 9 0 11-6.219-8.56"></path>
                     </svg>
                     Processing Order...
                 `;
+                
+                // Add rotation animation
+                const spinner = submitBtn.querySelector('svg');
+                if (spinner) {
+                    spinner.style.animation = 'spin 1s linear infinite';
+                }
             }
             
             // Get form data
@@ -470,7 +558,7 @@ function setupCartDropdown() {
             if (typeof toggleCartDropdown !== 'undefined') {
                 toggleCartDropdown();
             } else {
-                cartDropdown.classList.toggle('active');
+                cartDropdown?.classList.toggle('active');
             }
         });
     }
@@ -480,7 +568,7 @@ function setupCartDropdown() {
             if (typeof closeCartDropdown !== 'undefined') {
                 closeCartDropdown();
             } else {
-                cartDropdown.classList.remove('active');
+                cartDropdown?.classList.remove('active');
             }
         });
     }
@@ -490,8 +578,19 @@ function setupCartDropdown() {
 }
 
 // Make functions globally available
-window.updateCheckoutQuantity = updateCheckoutQuantity;
-window.removeCheckoutItem = removeCheckoutItem;
+window.processExpressPayment = processExpressPayment;
+
+// Add CSS for spinner animation
+const spinnerCSS = `
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+`;
+
+document.head.insertAdjacentHTML('beforeend', spinnerCSS);
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', initializeCheckout);
