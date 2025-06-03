@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024-25 Topps UEFA Club Competition Chrome Soccer Blaster Box - Butler Trading Cards</title>
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="product-detail.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+              <a href="Homepage.html" class="logo-link">
+                <img src="butler.png" alt="Butler Trading Cards" class="logo-img">
+              </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="Homepage.html">HOME</a></li>
+                    <li><a href="products.html">PRODUCTS</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-right">
+                <div class="search-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search products..." class="search-input" id="searchInput" autocomplete="off">
+                        <button class="search-btn" type="button" id="searchBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="header-actions">
+                    <a href="#" class="account-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </a>
+                    <div class="cart-container">
+                        <a href="#" class="cart-btn" id="cartToggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            <span class="cart-badge" id="cartBadge">0</span>
+                        </a>
+                        
+                        <!-- Cart Dropdown -->
+                        <div class="cart-dropdown" id="cartDropdown">
+                            <div class="cart-header">
+                                <h3>Shopping Cart</h3>
+                                <span class="cart-close" id="cartClose">&times;</span>
+                            </div>
+                            <div class="cart-items" id="cartItems">
+                                <div class="empty-cart">
+                                    <p>Your cart is empty</p>
+                                </div>
+                            </div>
+                            <div class="cart-footer">
+                                <div class="cart-total">
+                                    <strong>Total: $<span id="cartTotal">0.00</span></strong>
+                                </div>
+                                <button class="checkout-btn">CHECKOUT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="Homepage.html">Home</a> > <a href="products.html">Products</a> > 2024-25 Topps UEFA Club Competition Chrome Soccer Blaster Box
+            </div>
+            
+            <div class="product-detail-container">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="uefa24-25.png" alt="2024-25 Topps UEFA Club Competition Chrome Soccer Blaster Box" class="main-img">
+                        <div class="availability-badge-detail instock">IN STOCK</div>
+                    </div>
+                    <div class="thumbnail-images">
+                        <div class="thumbnail active" onclick="selectThumbnail(this, 'uefa24-25.png')">
+                            <img src="uefa24-25.png" alt="2024-25 Topps UEFA Club Competition Chrome Soccer Blaster Box - Main View">
+                        </div>
+                        <div class="thumbnail" onclick="selectThumbnail(this, 'uefa24-25.png')">
+                            <img src="uefa24-25.png" alt="2024-25 Topps UEFA Club Competition Chrome Soccer Blaster Box - Side View">
+                        </div>
+                        <div class="thumbnail" onclick="selectThumbnail(this, 'uefa24-25.png')">
+                            <img src="uefa24-25.png" alt="2024-25 Topps UEFA Club Competition Chrome Soccer Blaster Box - Back View">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Information -->
+                <div class="product-info-detail">
+                    <h1 class="product-title">2024-25 Topps UEFA Club Competition Chrome Soccer Blaster Box</h1>
+                    <div class="product-meta-detail">
+                        <span class="product-brand-detail">TOPPS</span>
+                        <span class="product-type-badge-detail">BLASTER</span>
+                    </div>
+                    
+                    <div class="price-detail">$54.99 AUD</div>
+                    
+                    <div class="quantity-section">
+                        <label for="quantity">Quantity:</label>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn-detail" id="decreaseQty">−</button>
+                            <input type="number" id="quantity" value="1" min="1" class="quantity-input-detail">
+                            <button class="quantity-btn-detail" id="increaseQty">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="add-to-cart-detail" id="addToCartBtn">ADD TO CART</button>
+                        <button class="buy-now-btn" id="buyNowBtn">BUY NOW</button>
+                    </div>
+                    
+                    <!-- Expandable Sections -->
+                    <div class="product-sections">
+                        <div class="section-item">
+                            <div class="section-header" onclick="toggleSection(this)">
+                                <span>DESCRIPTION</span>
+                                <span class="section-toggle">∨</span>
+                            </div>
+                            <div class="section-content">
+                                <div class="section-inner">
+                                    <div class="highlight-box">
+                                        <h3>Look for Exclusive RARE Epicenter Inserts!</h3>
+                                    </div>
+                                    
+                                    <p><strong>UEFA hobby season returns for 2024/25 with a bang as Topps' UEFA Club Competitions flagship product arrives earlier than ever before!</strong></p>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Blaster Box Configuration</h4>
+                                        <ul>
+                                            <li><strong>8 Cards Per Pack, 7 Packs Per Box</strong></li>
+                                            <li><strong>1 #'d Exclusive Inferno Parallel Per Box!</strong></li>
+                                            <li><strong>3 Northern Light Parallels Per Box!</strong></li>
+                                            <li><strong>Search for Autographs!</strong></li>
+                                            <li><strong>Look for Base SP & SSP Cards!</strong></li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>2024/25 Season Highlights</h4>
+                                        <ul>
+                                            <li><strong>Early Release:</strong> Flagship product arrives earlier than ever before</li>
+                                            <li><strong>200-Card Base Set:</strong> Stars and rookies from all three UEFA competitions</li>
+                                            <li><strong>Team Logo Border Variations:</strong> All-new short-printed chase cards</li>
+                                            <li><strong>European Glory:</strong> Champions League, Europa League, and Europa Conference League coverage</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Legendary Autographs</h4>
+                                        <ul>
+                                            <li><strong>Marks of Excellence:</strong> Popular on-card autographs return</li>
+                                            <li><strong>Ronaldinho:</strong> Brazilian legend and FIFA World Cup winner</li>
+                                            <li><strong>Zlatan Ibrahimović:</strong> Swedish icon and prolific goal scorer</li>
+                                            <li><strong>Andrés Iniesta:</strong> Spanish maestro and World Cup winner</li>
+                                            <li><strong>Davor Šuker:</strong> Croatian striker and Golden Boot winner</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Blaster Box Exclusives</h4>
+                                        <ul>
+                                            <li><strong>Epicenter Inserts:</strong> Ultra Rare chase card EXCLUSIVE to Blaster Boxes!</li>
+                                            <li><strong>All Numbered Inferno Parallels:</strong> Value Box exclusive content</li>
+                                            <li><strong>Enhanced Odds:</strong> Better pull rates in blaster format</li>
+                                            <li><strong>Premium Accessibility:</strong> High-end content in affordable format</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="section-item">
+                            <div class="section-header" onclick="toggleSection(this)">
+                                <span>BASE SET & PARALLELS</span>
+                                <span class="section-toggle">∨</span>
+                            </div>
+                            <div class="section-content collapsed">
+                                <div class="section-inner">
+                                    <div class="feature-section">
+                                        <h4>200-Card Base Set</h4>
+                                        <ul>
+                                            <li><strong>UEFA Competition Coverage:</strong> All stars and rookies from Champions League, Europa League, and Europa Conference League</li>
+                                            <li><strong>2023/24 Title Winners:</strong> 3 champions from the previous season</li>
+                                            <li><strong>Future Stars:</strong> 15 selected rising talents</li>
+                                            <li><strong>Combo Cards:</strong> 5 special combination cards</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Base Parallel Cards (Value Box Exclusive)</h4>
+                                        <ul>
+                                            <li><span class="parallel-special">Northern Lights Parallels:</span> 3 Per Value Box</li>
+                                            <li><span class="parallel-special">Purple Inferno Parallel:</span> Numbered to 299</li>
+                                            <li><span class="parallel-green">Neon Green Inferno Parallel:</span> Numbered to 199</li>
+                                            <li><span class="parallel-tie-dye">Blue Inferno Parallel:</span> Numbered to 125</li>
+                                            <li><span class="parallel-green">Green Inferno Parallel:</span> Numbered to 99</li>
+                                            <li><span class="parallel-special">Pink Inferno Parallel:</span> Numbered to 75</li>
+                                            <li><span class="parallel-gold">Gold Inferno Parallel:</span> Numbered to 50</li>
+                                            <li><span class="parallel-gold">Orange Inferno Parallel:</span> Numbered to 25</li>
+                                            <li><span class="parallel-black">Black Inferno Parallel:</span> Numbered to 10</li>
+                                            <li><span class="parallel-black">Red Inferno Parallel:</span> Numbered 1/1</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Base Card Short Prints</h4>
+                                        <ul>
+                                            <li><strong>Base Card Short Prints:</strong> Top Legends, Rookies and Veterans with special image variations</li>
+                                            <li><strong>Base Card Super Short Prints:</strong> The 10 most collectable Topps players</li>
+                                            <li><strong>Team Logo Border Variations:</strong> New short-printed chase cards</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Collecting Strategy</h4>
+                                        <ul>
+                                            <li><strong>Complete Set Building:</strong> 200 cards covering all major UEFA competitions</li>
+                                            <li><strong>Parallel Rainbow:</strong> Collect all Inferno parallel colors</li>
+                                            <li><strong>Short Print Hunting:</strong> Chase the rare SP and SSP variations</li>
+                                            <li><strong>Future Stars Focus:</strong> Target rising talents for long-term value</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="section-item">
+                            <div class="section-header" onclick="toggleSection(this)">
+                                <span>INSERT CARDS & EPICENTER</span>
+                                <span class="section-toggle">∨</span>
+                            </div>
+                            <div class="section-content collapsed">
+                                <div class="section-inner">
+                                    <div class="feature-section">
+                                        <h4>New Insert Sets</h4>
+                                        <ul>
+                                            <li><strong>New Era:</strong> Footballers at the forefront of continental competition</li>
+                                            <li><strong>Trophy Chasers:</strong> New challengers competing for European glory</li>
+                                            <li><strong>Best of the Best: UCL Legends:</strong> Champions League's greatest legends</li>
+                                            <li><strong>Historic Captains:</strong> Greatest players to lead their sides</li>
+                                            <li><strong>Cover Stars:</strong> Magazine-styled cards featuring top players</li>
+                                            <li><strong>Mojo:</strong> Players bringing maximum energy to competition</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Epicenter - Ultra Rare Blaster Exclusive</h4>
+                                        <ul>
+                                            <li><strong>EXCLUSIVE TO BLASTER BOX:</strong> Cannot be found in any other format</li>
+                                            <li><strong>Ultra Rare:</strong> Extremely limited availability</li>
+                                            <li><strong>Action Focus:</strong> Players always in the middle of the action</li>
+                                            <li><strong>FoilFractor Parallel:</strong> Numbered 1/1 available</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Insert Parallel System</h4>
+                                        <p><strong>All insert sets (except Epicenter and Mojo) available in:</strong></p>
+                                        <ul>
+                                            <li><span class="parallel-green">Green Parallel:</span> Numbered to 99</li>
+                                            <li><span class="parallel-tie-dye">Icy Blue Parallel:</span> Numbered to 75</li>
+                                            <li><span class="parallel-gold">Gold Parallel:</span> Numbered to 50</li>
+                                            <li><span class="parallel-special">Red Parallel:</span> Numbered to 5</li>
+                                            <li><span class="parallel-black">FoilFractor Parallel:</span> Numbered 1/1</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Insert Collecting Strategy</h4>
+                                        <ul>
+                                            <li><strong>Blaster Advantage:</strong> Exclusive access to Epicenter inserts</li>
+                                            <li><strong>Parallel Building:</strong> Complete rainbow sets for favorite players</li>
+                                            <li><strong>Theme Collecting:</strong> Focus on specific insert themes (legends, captains, etc.)</li>
+                                            <li><strong>Ultra-Rare Hunt:</strong> Chase the 1/1 FoilFractor parallels</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="section-item">
+                            <div class="section-header" onclick="toggleSection(this)">
+                                <span>AUTOGRAPH CARDS</span>
+                                <span class="section-toggle">∨</span>
+                            </div>
+                            <div class="section-content collapsed">
+                                <div class="section-inner">
+                                    <div class="feature-section">
+                                        <h4>Autograph Sets</h4>
+                                        <ul>
+                                            <li><strong>Base Card Autographs:</strong> Standard player signatures</li>
+                                            <li><strong>Future Stars Autographs:</strong> Rising talent signatures</li>
+                                            <li><strong>Teammates Dual Autographs:</strong> Two players from the same team</li>
+                                            <li><strong>Ultimate Stage Autographs:</strong> Elite competition-themed signatures</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Insert Autograph Sets</h4>
+                                        <ul>
+                                            <li><strong>New Era Autographs:</strong> FoilFractor Parallel numbered 1/1</li>
+                                            <li><strong>Trophy Chasers Autographs:</strong> FoilFractor Parallel numbered 1/1</li>
+                                            <li><strong>Best of the Best UCL Legends Autographs:</strong> FoilFractor Parallel numbered 1/1</li>
+                                            <li><strong>Cover Stars Autographs:</strong> FoilFractor Parallel numbered 1/1</li>
+                                            <li><strong>Historic Captains Autographs:</strong> FoilFractor Parallel numbered 1/1</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Autograph Parallel Numbering</h4>
+                                        <ul>
+                                            <li><strong>Base & Future Stars Autographs:</strong></li>
+                                            <li>Neon Green (/199), Green (/99), Gold (/50), Icy Black (/10), Red (/5), FoilFractor (1/1)</li>
+                                            <li><strong>Teammates Dual Autographs:</strong></li>
+                                            <li>Icy Black (/10), Red (/5), FoilFractor (1/1)</li>
+                                            <li><strong>Ultimate Stage Autographs:</strong></li>
+                                            <li>Green (/99), Gold (/50), Icy Black (/10), Red (/5), FoilFractor (1/1)</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Legendary Marks of Excellence</h4>
+                                        <ul>
+                                            <li><strong>On-Card Autographs:</strong> Popular returning feature</li>
+                                            <li><strong>Hall of Fame Legends:</strong> Ronaldinho, Zlatan, Iniesta, Šuker</li>
+                                            <li><strong>Most-Sought Cards:</strong> Among the highest demand for UEFA collectors</li>
+                                            <li><strong>Limited Availability:</strong> Extremely rare pulls</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="section-item">
+                            <div class="section-header" onclick="toggleSection(this)">
+                                <span>SHIPPING & RETURNS</span>
+                                <span class="section-toggle">∨</span>
+                            </div>
+                            <div class="section-content collapsed">
+                                <div class="section-inner">
+                                    <div class="feature-section">
+                                        <h4>Free Worldwide Shipping on Singles Orders</h4>
+                                        <p><strong>Spend $75 or more on Singles for FREE SHIPPING Worldwide.</strong></p>
+                                        <p>All international shipping is tracked. Domestic orders can be sent for $2 without tracking, if preferred.</p>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Shipping Options</h4>
+                                        <ul>
+                                            <li><strong>Standard Shipping:</strong> 5-10 business days</li>
+                                            <li><strong>Express Shipping:</strong> 2-5 business days</li>
+                                            <li><strong>Tracked International:</strong> 7-21 business days</li>
+                                            <li><strong>All orders</strong> are dispatched within 1-2 business days</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Returns Policy</h4>
+                                        <p><strong>30-day return policy</strong> on unopened products. Items must be in original condition with all seals intact.</p>
+                                        <ul>
+                                            <li>Unopened products only</li>
+                                            <li>Original packaging required</li>
+                                            <li>Return shipping at buyer's expense</li>
+                                            <li>Refund processed within 5-7 business days</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Soccer Card Protection</h4>
+                                        <ul>
+                                            <li><strong>Secure Packaging:</strong> All blaster boxes carefully protected during shipping</li>
+                                            <li><strong>European Import:</strong> Direct from Topps European distribution</li>
+                                            <li><strong>Condition Guarantee:</strong> Undamaged packaging guaranteed</li>
+                                            <li><strong>UEFA Official:</strong> Officially licensed UEFA product</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- You May Also Like Section -->
+            <div class="related-products">
+                <h2 class="related-title">YOU MAY ALSO LIKE</h2>
+                <div class="related-grid">
+                    <div class="related-product-card" onclick="window.location.href='real-madrid-24-25.html'">
+                        <div class="related-product-img">
+                            <img src="real-madrid24-25.png" alt="2024-25 Topps Soccer Real Madrid Fan Set Box">
+                        </div>
+                        <div class="related-product-info">
+                            <h4>2024-25 Topps Soccer Real Madrid Fan Set Box</h4>
+                            <div class="related-product-price">$44.99 AUD</div>
+                        </div>
+                    </div>
+                    
+                    <div class="related-product-card" onclick="window.location.href='fifa-worldcup-22.html'">
+                        <div class="related-product-img">
+                            <img src="fifa-worldcup22.png" alt="2022 Panini Prizm FIFA World Cup Soccer Hobby Box">
+                        </div>
+                        <div class="related-product-info">
+                            <h4>2022 Panini Prizm FIFA World Cup Soccer Hobby Box</h4>
+                            <div class="related-product-price">$999.99 AUD</div>
+                        </div>
+                    </div>
+                    
+                    <div class="related-product-card" onclick="window.location.href='resurgence-24.html'">
+                        <div class="related-product-img">
+                            <img src="resurgence24.png" alt="2024 Topps Resurgence Football Mega Box">
+                        </div>
+                        <div class="related-product-info">
+                            <h4>2024 Topps Resurgence Football Mega Box</h4>
+                            <div class="related-product-price">$99.99 AUD</div>
+                        </div>
+                    </div>
+                    
+                    <div class="see-more-card" onclick="window.location.href='products.html'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#e83e8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="M12 5l7 7-7 7"></path>
+                        </svg>
+                        <span>SEE MORE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo Section -->
+                <div class="footer-logo-section">
+                    <img src="butler.png" alt="Butler Trading Cards" class="footer-logo">
+                </div>
+                
+                <!-- Links Section -->
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="about.html">About</a>
+                        <a href="products.html">Products</a>
+                        <a href="contact.html">Contact us</a>
+                    </div>
+                    <div class="footer-column">
+                        <a href="privacy.html">Privacy policy</a>
+                        <a href="refund.html">Refund policy</a>
+                        <a href="shipping.html">Shipping policy</a>
+                        <a href="tos.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2025 Butler Trading Cards. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/g/16JAkQLR5U/" target="_blank" class="social-link facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/butler.trading.cards?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-link instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="http://www.youtube.com/@butlertradingcards" target="_blank" class="social-link youtube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                            </svg>
+                        </a>
+                        <a href="https://www.whatnot.com/s/WKpFWcEk" target="_blank" class="social-link whatnot">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Payment Methods -->
+                <div class="payment-methods">
+                    <span>We accept:</span>
+                    <div class="payment-icons">
+                        <div class="payment-icon">
+                            <img src="visa.png" alt="Visa" class="payment-image">
+                        </div>
+                        <div class="payment-icon">
+                            <img src="apple-pay.png" alt="Apple Pay" class="payment-image">
+                        </div>
+                        <div class="payment-icon">
+                            <img src="paypal.png" alt="PayPal" class="payment-image">
+                        </div>
+                        <div class="payment-icon">
+                            <img src="google-pay.png" alt="Google Pay" class="payment-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Chat Button -->
+    <div class="chat-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+        </svg>
+    </div>
+
+    <!-- Product Data for this specific product -->
+    <script>
+        window.currentProductData = {
+            id: 14,
+            name: "2024-25 Topps UEFA Club Competition Chrome Soccer Blaster Box",
+            type: "Soccer Cards",
+            price: 54.99,
+            brand: "Topps",
+            sport: "soccer",
+            productType: "blaster",
+            availability: "instock",
+            image: "uefa24-25.png"
+        };
+    </script>
+
+    <script src="products.js"></script>
+    <script src="product-detail.js"></script>
+</body>
+</html>

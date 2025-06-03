@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024-25 Topps Soccer Real Madrid Fan Set Box - Butler Trading Cards</title>
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="product-detail.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+              <a href="Homepage.html" class="logo-link">
+                <img src="butler.png" alt="Butler Trading Cards" class="logo-img">
+              </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="Homepage.html">HOME</a></li>
+                    <li><a href="products.html">PRODUCTS</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-right">
+                <div class="search-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search products..." class="search-input" id="searchInput" autocomplete="off">
+                        <button class="search-btn" type="button" id="searchBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="header-actions">
+                    <a href="#" class="account-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </a>
+                    <div class="cart-container">
+                        <a href="#" class="cart-btn" id="cartToggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            <span class="cart-badge" id="cartBadge">0</span>
+                        </a>
+                        
+                        <!-- Cart Dropdown -->
+                        <div class="cart-dropdown" id="cartDropdown">
+                            <div class="cart-header">
+                                <h3>Shopping Cart</h3>
+                                <span class="cart-close" id="cartClose">&times;</span>
+                            </div>
+                            <div class="cart-items" id="cartItems">
+                                <div class="empty-cart">
+                                    <p>Your cart is empty</p>
+                                </div>
+                            </div>
+                            <div class="cart-footer">
+                                <div class="cart-total">
+                                    <strong>Total: $<span id="cartTotal">0.00</span></strong>
+                                </div>
+                                <button class="checkout-btn">CHECKOUT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="Homepage.html">Home</a> > <a href="products.html">Products</a> > 2024-25 Topps Soccer Real Madrid Fan Set Box
+            </div>
+            
+            <div class="product-detail-container">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="real-madrid24-25.png" alt="2024-25 Topps Soccer Real Madrid Fan Set Box" class="main-img">
+                        <div class="availability-badge-detail instock">IN STOCK</div>
+                    </div>
+                    <div class="thumbnail-images">
+                        <div class="thumbnail active" onclick="selectThumbnail(this, 'real-madrid24-25.png')">
+                            <img src="real-madrid24-25.png" alt="2024-25 Topps Soccer Real Madrid Fan Set Box - Main View">
+                        </div>
+                        <div class="thumbnail" onclick="selectThumbnail(this, 'real-madrid24-25.png')">
+                            <img src="real-madrid24-25.png" alt="2024-25 Topps Soccer Real Madrid Fan Set Box - Side View">
+                        </div>
+                        <div class="thumbnail" onclick="selectThumbnail(this, 'real-madrid24-25.png')">
+                            <img src="real-madrid24-25.png" alt="2024-25 Topps Soccer Real Madrid Fan Set Box - Back View">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Information -->
+                <div class="product-info-detail">
+                    <h1 class="product-title">2024-25 Topps Soccer Real Madrid Fan Set Box</h1>
+                    <div class="product-meta-detail">
+                        <span class="product-brand-detail">TOPPS</span>
+                        <span class="product-type-badge-detail">BLASTER</span>
+                    </div>
+                    
+                    <div class="price-detail">$44.99 AUD</div>
+                    
+                    <div class="quantity-section">
+                        <label for="quantity">Quantity:</label>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn-detail" id="decreaseQty">−</button>
+                            <input type="number" id="quantity" value="1" min="1" class="quantity-input-detail">
+                            <button class="quantity-btn-detail" id="increaseQty">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="add-to-cart-detail" id="addToCartBtn">ADD TO CART</button>
+                        <button class="buy-now-btn" id="buyNowBtn">BUY NOW</button>
+                    </div>
+                    
+                    <!-- Expandable Sections -->
+                    <div class="product-sections">
+                        <div class="section-item">
+                            <div class="section-header" onclick="toggleSection(this)">
+                                <span>DESCRIPTION</span>
+                                <span class="section-toggle">∨</span>
+                            </div>
+                            <div class="section-content">
+                                <div class="section-inner">
+                                    <div class="highlight-box">
+                                        <h3>Look For Super Rare Autograph Cards</h3>
+                                    </div>
+                                    
+                                    <p><strong>Topps is delighted to introduce the Real Madrid Fan Set in the 2024/25 season, guaranteeing you an exciting rip featuring 28 stars from Real Madrid, both present-day heroes and fan-favourite legends.</strong></p>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Box Configuration</h4>
+                                        <ul>
+                                            <li><strong>28 Cards Per Box</strong></li>
+                                            <li><strong>Real Madrid Exclusive:</strong> Focus on Los Blancos stars only</li>
+                                            <li><strong>Present-Day Heroes:</strong> Current first-team squad members</li>
+                                            <li><strong>Fan-Favourite Legends:</strong> Historic Real Madrid icons</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Base Cards Collection</h4>
+                                        <ul>
+                                            <li><strong>Complete First-Team Squad:</strong> Collect all current Real Madrid players</li>
+                                            <li><strong>2024/25 Season:</strong> Updated roster with latest signings</li>
+                                            <li><strong>Premium Card Stock:</strong> High-quality base card production</li>
+                                            <li><strong>Official Licensing:</strong> Authentic Real Madrid imagery and branding</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Chase Cards & Inserts</h4>
+                                        <ul>
+                                            <li><strong>Golden Future:</strong> Returning favourite featuring rising stars</li>
+                                            <li><strong>Golden Treasure:</strong> True 1/1 chase card - the ultimate pull</li>
+                                            <li><strong>Monolith Insert:</strong> Etched-in-stone legends design</li>
+                                            <li><strong>Fanatic Fans:</strong> Pitch-side feeling with supporter imagery</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Guaranteed Parallels</h4>
+                                        <ul>
+                                            <li><strong>Sequential Numbered Parallel:</strong> Minimum 1 per box with specific numbering</li>
+                                            <li><strong>Electro Parallel:</strong> 1 unnumbered electrifying design per box</li>
+                                            <li><strong>Beautiful Designs:</strong> Two distinct parallel aesthetics</li>
+                                            <li><strong>Guaranteed Content:</strong> Every box delivers parallels</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Super Rare Autograph Cards</h4>
+                                        <ul>
+                                            <li><strong>Past Icons:</strong> Legendary Real Madrid players from history</li>
+                                            <li><strong>Present Stars:</strong> Current Los Blancos superstars</li>
+                                            <li><strong>Impressive Range:</strong> Wide variety of player autographs</li>
+                                            <li><strong>Big Chase Cards:</strong> The ultimate hit in each Fan Set</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Featured Players</h4>
+                                        <ul>
+                                            <li><strong>Vinícius Jr.:</strong> Brazilian winger and Champions League hero</li>
+                                            <li><strong>Jude Bellingham:</strong> English midfielder and Ballon d'Or candidate</li>
+                                            <li><strong>Kylian Mbappé:</strong> French superstar and new Galáctico</li>
+                                            <li><strong>Luka Modrić:</strong> Croatian maestro and midfield legend</li>
+                                            <li><strong>Karim Benzema:</strong> Former captain and Ballon d'Or winner</li>
+                                            <li><strong>Sergio Ramos:</strong> Defensive legend and club icon</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Real Madrid Legacy</h4>
+                                        <ul>
+                                            <li><strong>Los Blancos:</strong> The most successful club in football history</li>
+                                            <li><strong>15 Champions League Titles:</strong> Record European success</li>
+                                            <li><strong>Santiago Bernabéu:</strong> Iconic stadium and home ground</li>
+                                            <li><strong>Galáctico Tradition:</strong> History of world-class signings</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Product Highlights</h4>
+                                        <ul>
+                                            <li><strong>Fan Set Exclusive:</strong> Dedicated Real Madrid collection</li>
+                                            <li><strong>2024/25 Season:</strong> Current campaign coverage</li>
+                                            <li><strong>Premium Quality:</strong> Topps championship-level production</li>
+                                            <li><strong>Collector Value:</strong> Limited edition team-specific set</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="section-item">
+                            <div class="section-header" onclick="toggleSection(this)">
+                                <span>SHIPPING & RETURNS</span>
+                                <span class="section-toggle">∨</span>
+                            </div>
+                            <div class="section-content collapsed">
+                                <div class="section-inner">
+                                    <div class="feature-section">
+                                        <h4>Shipping Information</h4>
+                                        <p><strong>Free Worldwide Shipping on Singles Orders</strong></p>
+                                        <p>Spend $75 or more on Singles for FREE SHIPPING Worldwide. All international shipping is tracked.</p>
+                                        <p>Domestic orders can be sent for $2 without tracking, if preferred.</p>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Shipping Options</h4>
+                                        <ul>
+                                            <li><strong>Standard Shipping:</strong> 5-10 business days</li>
+                                            <li><strong>Express Shipping:</strong> 2-5 business days</li>
+                                            <li><strong>Tracked International:</strong> 7-21 business days</li>
+                                            <li><strong>All orders</strong> are dispatched within 1-2 business days</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Returns Policy</h4>
+                                        <p><strong>30-day return policy</strong> on unopened products. Items must be in original condition with all seals intact.</p>
+                                        <ul>
+                                            <li>Unopened products only</li>
+                                            <li>Original packaging required</li>
+                                            <li>Return shipping at buyer's expense</li>
+                                            <li>Refund processed within 5-7 business days</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- You May Also Like Section -->
+            <div class="related-products">
+                <h2 class="related-title">YOU MAY ALSO LIKE</h2>
+                <div class="related-grid">
+                    <div class="related-product-card" onclick="window.location.href='products.html'">
+                        <div class="related-product-img">
+                            <img src="fifa-worldcup22.png" alt="2022 Panini Prizm FIFA World Cup Soccer Hobby Box">
+                        </div>
+                        <div class="related-product-info">
+                            <h4>2022 Panini Prizm FIFA World Cup Soccer Hobby Box</h4>
+                            <div class="related-product-price">$999.99 AUD</div>
+                        </div>
+                    </div>
+                    
+                    <div class="related-product-card" onclick="window.location.href='products.html'">
+                        <div class="related-product-img">
+                            <img src="uefa24-25.png" alt="2024-25 Topps UEFA Club Competition Chrome Soccer Blaster Box">
+                        </div>
+                        <div class="related-product-info">
+                            <h4>2024-25 Topps UEFA Club Competition Chrome Soccer Blaster Box</h4>
+                            <div class="related-product-price">$54.99 AUD</div>
+                        </div>
+                    </div>
+                    
+                    <div class="related-product-card" onclick="window.location.href='products.html'">
+                        <div class="related-product-img">
+                            <img src="topps-chrome24-25.png" alt="2024-25 Topps Chrome Basketball 8-Pack Blaster Box">
+                        </div>
+                        <div class="related-product-info">
+                            <h4>2024-25 Topps Chrome Basketball 8-Pack Blaster Box</h4>
+                            <div class="related-product-price">$49.99 AUD</div>
+                        </div>
+                    </div>
+                    
+                    <div class="see-more-card" onclick="window.location.href='products.html'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#e83e8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="M12 5l7 7-7 7"></path>
+                        </svg>
+                        <span>SEE MORE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo Section -->
+                <div class="footer-logo-section">
+                    <img src="butler.png" alt="Butler Trading Cards" class="footer-logo">
+                </div>
+                
+                <!-- Links Section -->
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="about.html">About</a>
+                        <a href="products.html">Products</a>
+                        <a href="contact.html">Contact us</a>
+                    </div>
+                    <div class="footer-column">
+                        <a href="privacy.html">Privacy policy</a>
+                        <a href="refund.html">Refund policy</a>
+                        <a href="shipping.html">Shipping policy</a>
+                        <a href="tos.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2025 Butler Trading Cards. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/g/16JAkQLR5U/" target="_blank" class="social-link facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/butler.trading.cards?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-link instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="http://www.youtube.com/@butlertradingcards" target="_blank" class="social-link youtube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                            </svg>
+                        </a>
+                        <a href="https://www.whatnot.com/s/WKpFWcEk" target="_blank" class="social-link whatnot">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Payment Methods -->
+                <div class="payment-methods">
+                    <span>We accept:</span>
+                    <div class="payment-icons">
+                        <div class="payment-icon">
+                            <img src="visa.png" alt="Visa" class="payment-image">
+                        </div>
+                        <div class="payment-icon">
+                            <img src="apple-pay.png" alt="Apple Pay" class="payment-image">
+                        </div>
+                        <div class="payment-icon">
+                            <img src="paypal.png" alt="PayPal" class="payment-image">
+                        </div>
+                        <div class="payment-icon">
+                            <img src="google-pay.png" alt="Google Pay" class="payment-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Chat Button -->
+    <div class="chat-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+        </svg>
+    </div>
+
+    <!-- Product Data for this specific product -->
+    <script>
+        window.currentProductData = {
+            id: 19,
+            name: "2024-25 Topps Soccer Real Madrid Fan Set Box",
+            type: "Soccer Cards",
+            price: 44.99,
+            brand: "Topps",
+            sport: "soccer",
+            productType: "blaster",
+            availability: "instock",
+            image: "real-madrid24-25.png"
+        };
+    </script>
+
+    <script src="products.js"></script>
+    <script src="product-detail.js"></script>
+</body>
+</html>

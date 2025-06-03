@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 Topps Cosmic Chrome Football Hobby Box - Butler Trading Cards</title>
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="product-detail.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+              <a href="Homepage.html" class="logo-link">
+                <img src="butler.png" alt="Butler Trading Cards" class="logo-img">
+              </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="Homepage.html">HOME</a></li>
+                    <li><a href="products.html">PRODUCTS</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-right">
+                <div class="search-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search products..." class="search-input" id="searchInput" autocomplete="off">
+                        <button class="search-btn" type="button" id="searchBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="header-actions">
+                    <a href="#" class="account-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </a>
+                    <div class="cart-container">
+                        <a href="#" class="cart-btn" id="cartToggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            <span class="cart-badge" id="cartBadge">0</span>
+                        </a>
+                        
+                        <!-- Cart Dropdown -->
+                        <div class="cart-dropdown" id="cartDropdown">
+                            <div class="cart-header">
+                                <h3>Shopping Cart</h3>
+                                <span class="cart-close" id="cartClose">&times;</span>
+                            </div>
+                            <div class="cart-items" id="cartItems">
+                                <div class="empty-cart">
+                                    <p>Your cart is empty</p>
+                                </div>
+                            </div>
+                            <div class="cart-footer">
+                                <div class="cart-total">
+                                    <strong>Total: $<span id="cartTotal">0.00</span></strong>
+                                </div>
+                                <button class="checkout-btn">CHECKOUT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="Homepage.html">Home</a> > <a href="products.html">Products</a> > 2024 Topps Cosmic Chrome Football Hobby Box
+            </div>
+            
+            <div class="product-detail-container">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="cosmic-chrome24.png" alt="2024 Topps Cosmic Chrome Football Hobby Box" class="main-img">
+                        <div class="availability-badge-detail preorder">PRE-ORDER</div>
+                    </div>
+                    <div class="thumbnail-images">
+                        <div class="thumbnail active" onclick="selectThumbnail(this, 'cosmic-chrome24.png')">
+                            <img src="cosmic-chrome24.png" alt="2024 Topps Cosmic Chrome Football Hobby Box - Main View">
+                        </div>
+                        <div class="thumbnail" onclick="selectThumbnail(this, 'cosmic-chrome24.png')">
+                            <img src="cosmic-chrome24.png" alt="2024 Topps Cosmic Chrome Football Hobby Box - Side View">
+                        </div>
+                        <div class="thumbnail" onclick="selectThumbnail(this, 'cosmic-chrome24.png')">
+                            <img src="cosmic-chrome24.png" alt="2024 Topps Cosmic Chrome Football Hobby Box - Back View">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Information -->
+                <div class="product-info-detail">
+                    <h1 class="product-title">2024 Topps Cosmic Chrome Football Hobby Box</h1>
+                    <div class="product-meta-detail">
+                        <span class="product-brand-detail">TOPPS</span>
+                        <span class="product-type-badge-detail">HOBBY</span>
+                    </div>
+                    
+                    <div class="price-detail high-price">$629.99 AUD</div>
+                    
+                    <div class="quantity-section">
+                        <label for="quantity">Quantity:</label>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn-detail" id="decreaseQty">−</button>
+                            <input type="number" id="quantity" value="1" min="1" class="quantity-input-detail">
+                            <button class="quantity-btn-detail" id="increaseQty">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="add-to-cart-detail" id="addToCartBtn">PRE-ORDER NOW</button>
+                        <button class="buy-now-btn" id="buyNowBtn">RESERVE NOW</button>
+                    </div>
+                    
+                    <!-- Expandable Sections -->
+                    <div class="product-sections">
+                        <div class="section-item">
+                            <div class="section-header" onclick="toggleSection(this)">
+                                <span>DESCRIPTION</span>
+                                <span class="section-toggle">∨</span>
+                            </div>
+                            <div class="section-content">
+                                <div class="section-inner">
+                                    <div class="highlight-box">
+                                        <h3>Look For Cosmic Chrome Autograph Cards</h3>
+                                    </div>
+                                    
+                                    <p><strong>Topps Cosmic Chrome Football makes its galvanizing debut with a galactic spin on chrome technology.</strong></p>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Hobby Box Configuration</h4>
+                                        <ul>
+                                            <li><strong>4 Cards Per Pack, 20 Packs Per Box</strong></li>
+                                            <li><strong>One Nucleus Refractor Parallel Per Box!</strong></li>
+                                            <li><strong>Two Refractor Parallels Per Box!</strong></li>
+                                            <li><strong>Two Other Base Parallels Per Box!</strong></li>
+                                            <li><strong>Find Planetary Pursuit Inserts!</strong></li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Galactic Chrome Technology</h4>
+                                        <ul>
+                                            <li><strong>Football Debut:</strong> Cosmic Chrome makes its galvanizing debut in football</li>
+                                            <li><strong>Galactic Spin:</strong> Revolutionary chrome technology with cosmic themes</li>
+                                            <li><strong>200-Card Base Set:</strong> Collect football's best rookies and all-time greats</li>
+                                            <li><strong>Out of This World Design:</strong> Space-themed parallels and inserts</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Insert Sets</h4>
+                                        <ul>
+                                            <li><strong>Launched Into Orbit:</strong> Players reaching new heights (1:6 packs)</li>
+                                            <li><strong>Galaxy Greats:</strong> Elite superstar collection (1:4 packs)</li>
+                                            <li><strong>Star Clusters:</strong> Team-focused insert set (1:10 packs)</li>
+                                            <li><strong>Star Command:</strong> Leadership-themed inserts (1:6 packs)</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Starfractor Cards</h4>
+                                        <ul>
+                                            <li><strong>Top 100 Players:</strong> Astronomically rare new design</li>
+                                            <li><strong>Exclusive Star Foil Pattern:</strong> Unique foil technology</li>
+                                            <li><strong>Ultra-Rare Parallels:</strong> Black Eclipse (/10), Red Flare (/5), Pink (1/1)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="section-item">
+                            <div class="section-header" onclick="toggleSection(this)">
+                                <span>COSMIC PARALLELS & NUMBERING</span>
+                                <span class="section-toggle">∨</span>
+                            </div>
+                            <div class="section-content collapsed">
+                                <div class="section-inner">
+                                    <div class="feature-section">
+                                        <h4>Base Card Parallels</h4>
+                                        <ul>
+                                            <li><span class="parallel-special">Refractor:</span> 1:10 packs - Classic chrome finish</li>
+                                            <li><span class="parallel-special">Nucleus Refractor:</span> 1 per box - Box exclusive</li>
+                                            <li><span class="parallel-tie-dye">White Hole Refractor:</span> Short Print</li>
+                                            <li><span class="parallel-special">Purple Nebula Refractor:</span> Numbered to 150</li>
+                                            <li><span class="parallel-green">Green Space Dust Refractor:</span> Numbered to 75</li>
+                                            <li><span class="parallel-gold">Gold Interstellar Refractor:</span> Numbered to 50</li>
+                                            <li><span class="parallel-gold">Orange Galactic Refractor:</span> Numbered to 25</li>
+                                            <li><span class="parallel-black">Black Eclipse Refractor:</span> Numbered to 10</li>
+                                            <li><span class="parallel-black">Lunar Eclipse Refractor:</span> Numbered to 10</li>
+                                            <li><span class="parallel-special">Red Flare Refractor:</span> Numbered to 5</li>
+                                            <li><span class="parallel-black">Superfractor Parallel:</span> Numbered 1/1</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Insert Card Parallels</h4>
+                                        <p><strong>All insert sets (Star Clusters, Launched Into Orbit, Star Command, Galaxy Greats) available in:</strong></p>
+                                        <ul>
+                                            <li><span class="parallel-green">Blue Moon Refractor:</span> Numbered to 99</li>
+                                            <li><span class="parallel-gold">Gold Interstellar Refractor:</span> Numbered to 50</li>
+                                            <li><span class="parallel-gold">Orange Galactic Refractor:</span> Numbered to 25</li>
+                                            <li><span class="parallel-black">Black Eclipse Refractor:</span> Numbered to 10</li>
+                                            <li><span class="parallel-special">Red Flare Refractor:</span> Numbered to 5</li>
+                                            <li><span class="parallel-black">SuperFractor Parallel:</span> Numbered 1/1</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Starfractor Parallels</h4>
+                                        <ul>
+                                            <li><strong>Base Starfractor:</strong> Exclusive star foil pattern design</li>
+                                            <li><span class="parallel-black">Black Eclipse Refractor:</span> Numbered to 10</li>
+                                            <li><span class="parallel-special">Red Flare Refractor:</span> Numbered to 5</li>
+                                            <li><span class="parallel-special">Pink:</span> Numbered 1/1</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Cosmic Collecting Strategy</h4>
+                                        <ul>
+                                            <li><strong>Base Set Building:</strong> 200-card set completion challenge</li>
+                                            <li><strong>Parallel Rainbow:</strong> Collect all cosmic-themed parallel colors</li>
+                                            <li><strong>Starfractor Focus:</strong> Chase the astronomically rare star foil cards</li>
+                                            <li><strong>Insert Variety:</strong> Multiple insert sets with space themes</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="section-item">
+                            <div class="section-header" onclick="toggleSection(this)">
+                                <span>PLANETARY PURSUIT & SSP CARDS</span>
+                                <span class="section-toggle">∨</span>
+                            </div>
+                            <div class="section-content collapsed">
+                                <div class="section-inner">
+                                    <div class="feature-section">
+                                        <h4>Planetary Pursuit Chase</h4>
+                                        <ul>
+                                            <li><strong>Solar System Journey:</strong> Travel through the Solar System pursuing cards</li>
+                                            <li><strong>10 Top Players:</strong> Featured in planetary run format</li>
+                                            <li><strong>Distance Difficulty:</strong> The further from the Sun, the tougher the chase!</li>
+                                            <li><strong>Football Debut:</strong> Making its highly sought after debut in football</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Planetary Chase Breakdown</h4>
+                                        <ul>
+                                            <li><strong>Mercury:</strong> Closest to Sun - Most common</li>
+                                            <li><strong>Venus, Earth, Mars:</strong> Progressively more difficult</li>
+                                            <li><strong>Jupiter, Saturn:</strong> Gas giant rarity levels</li>
+                                            <li><strong>Uranus, Neptune:</strong> Ice giant ultra-rarity</li>
+                                            <li><strong>Pluto:</strong> Dwarf planet - Astronomically rare</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>SSP (Super Short Print) Cards</h4>
+                                        <ul>
+                                            <li><strong>Cos-Play:</strong> Players in cosmic-themed designs</li>
+                                            <li><strong>Cosmic Heroes:</strong> Superhero-styled football stars</li>
+                                            <li><strong>Cosmic Dust:</strong> Ultra-rare space particle themed cards</li>
+                                            <li><strong>Stella Nova:</strong> Explosive star-themed short prints</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Chase Card Strategy</h4>
+                                        <ul>
+                                            <li><strong>Planetary Completion:</strong> Collect all planets for favorite players</li>
+                                            <li><strong>SSP Hunting:</strong> Search for the rarest short print inserts</li>
+                                            <li><strong>Solar System Theme:</strong> Educational and collectible appeal</li>
+                                            <li><strong>Investment Potential:</strong> Debut status increases long-term value</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="section-item">
+                            <div class="section-header" onclick="toggleSection(this)">
+                                <span>COSMIC AUTOGRAPHS</span>
+                                <span class="section-toggle">∨</span>
+                            </div>
+                            <div class="section-content collapsed">
+                                <div class="section-inner">
+                                    <div class="feature-section">
+                                        <h4>Autograph Sets</h4>
+                                        <ul>
+                                            <li><strong>Cosmic Chrome Autograph Variation:</strong> Standard autograph design</li>
+                                            <li><strong>Milky Way Marks:</strong> Galaxy-themed signature cards</li>
+                                            <li><strong>Equinox Autographs:</strong> Celestial event themed autographs</li>
+                                            <li><strong>Case Hit Frequency:</strong> Autographs fall 4 per case</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Autograph Parallels</h4>
+                                        <ul>
+                                            <li><span class="parallel-gold">Gold Interstellar Refractor:</span> Numbered to 50</li>
+                                            <li><span class="parallel-gold">Orange Galactic Refractor:</span> Numbered to 25</li>
+                                            <li><span class="parallel-black">Black Eclipse Refractor:</span> Numbered to 10</li>
+                                            <li><span class="parallel-special">Red Flare Refractor:</span> Numbered to 5</li>
+                                            <li><span class="parallel-black">SuperFractor Parallel:</span> Numbered 1/1</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Premium Autograph Content</h4>
+                                        <ul>
+                                            <li><strong>Top Player Focus:</strong> Autographs from the best in the game</li>
+                                            <li><strong>Cosmic Theme Integration:</strong> Space-themed autograph designs</li>
+                                            <li><strong>Limited Parallel Numbering:</strong> Extremely low print runs</li>
+                                            <li><strong>Case Hit Status:</strong> Premium rarity level for hobby boxes</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Autograph Investment Appeal</h4>
+                                        <ul>
+                                            <li><strong>Debut Product:</strong> First-ever Cosmic Chrome Football autographs</li>
+                                            <li><strong>Low Print Runs:</strong> Parallel numbering creates scarcity</li>
+                                            <li><strong>Unique Design:</strong> Galactic theme differentiates from other products</li>
+                                            <li><strong>Premium Format:</strong> Hobby-exclusive high-end content</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="section-item">
+                            <div class="section-header" onclick="toggleSection(this)">
+                                <span>SHIPPING & RETURNS</span>
+                                <span class="section-toggle">∨</span>
+                            </div>
+                            <div class="section-content collapsed">
+                                <div class="section-inner">
+                                    <div class="feature-section">
+                                        <h4>Premium Pre-Order Information</h4>
+                                        <p><strong>Secure your 2024 Topps Cosmic Chrome Football Hobby Box today!</strong></p>
+                                        <ul>
+                                            <li><strong>High-End Product:</strong> Premium hobby box with guaranteed hits</li>
+                                            <li><strong>Limited Allocation:</strong> Reserve your box to ensure availability</li>
+                                            <li><strong>Debut Release:</strong> First-ever Cosmic Chrome Football product</li>
+                                            <li><strong>Release Updates:</strong> Email notifications about product status</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Free Worldwide Shipping on Singles Orders</h4>
+                                        <p><strong>Spend $75 or more on Singles for FREE SHIPPING Worldwide.</strong></p>
+                                        <p>All international shipping is tracked. Domestic orders can be sent for $2 without tracking, if preferred.</p>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Premium Product Shipping</h4>
+                                        <ul>
+                                            <li><strong>Signature Required:</strong> All high-value items require signature confirmation</li>
+                                            <li><strong>Insurance Included:</strong> Full value insurance automatically applied</li>
+                                            <li><strong>Special Handling:</strong> Extra protective packaging for premium products</li>
+                                            <li><strong>Priority Processing:</strong> High-value orders processed first</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Returns Policy</h4>
+                                        <p><strong>30-day return policy</strong> on unopened products. Items must be in original condition with all seals intact.</p>
+                                        <ul>
+                                            <li>Unopened products only</li>
+                                            <li>Original packaging required</li>
+                                            <li>Return shipping at buyer's expense</li>
+                                            <li>Refund processed within 5-7 business days</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- You May Also Like Section -->
+            <div class="related-products">
+                <h2 class="related-title">YOU MAY ALSO LIKE</h2>
+                <div class="related-grid">
+                    <div class="related-product-card" onclick="window.location.href='resurgence-24.html'">
+                        <div class="related-product-img">
+                            <img src="resurgence24.png" alt="2024 Topps Resurgence Football Mega Box">
+                        </div>
+                        <div class="related-product-info">
+                            <h4>2024 Topps Resurgence Football Mega Box</h4>
+                            <div class="related-product-price">$99.99 AUD</div>
+                        </div>
+                    </div>
+                    
+                    <div class="related-product-card" onclick="window.location.href='select-24-25.html'">
+                        <div class="related-product-img">
+                            <img src="select24-25.png" alt="2024-25 Panini Select Basketball Hobby Box">
+                        </div>
+                        <div class="related-product-info">
+                            <h4>2024-25 Panini Select Basketball Hobby Box</h4>
+                            <div class="related-product-price">$799.99 AUD</div>
+                        </div>
+                    </div>
+                    
+                    <div class="related-product-card" onclick="window.location.href='immaculate-21-22.html'">
+                        <div class="related-product-img">
+                            <img src="immaculate21-22.png" alt="2021-22 Panini Immaculate NBA Hobby Box">
+                        </div>
+                        <div class="related-product-info">
+                            <h4>2021-22 Panini Immaculate NBA Hobby Box</h4>
+                            <div class="related-product-price">$2,999.95 AUD</div>
+                        </div>
+                    </div>
+                    
+                    <div class="see-more-card" onclick="window.location.href='products.html'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#e83e8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="M12 5l7 7-7 7"></path>
+                        </svg>
+                        <span>SEE MORE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo Section -->
+                <div class="footer-logo-section">
+                    <img src="butler.png" alt="Butler Trading Cards" class="footer-logo">
+                </div>
+                
+                <!-- Links Section -->
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="about.html">About</a>
+                        <a href="products.html">Products</a>
+                        <a href="contact.html">Contact us</a>
+                    </div>
+                    <div class="footer-column">
+                        <a href="privacy.html">Privacy policy</a>
+                        <a href="refund.html">Refund policy</a>
+                        <a href="shipping.html">Shipping policy</a>
+                        <a href="tos.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2025 Butler Trading Cards. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/g/16JAkQLR5U/" target="_blank" class="social-link facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/butler.trading.cards?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-link instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="http://www.youtube.com/@butlertradingcards" target="_blank" class="social-link youtube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                            </svg>
+                        </a>
+                        <a href="https://www.whatnot.com/s/WKpFWcEk" target="_blank" class="social-link whatnot">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Payment Methods -->
+                <div class="payment-methods">
+                    <span>We accept:</span>
+                    <div class="payment-icons">
+                        <div class="payment-icon">
+                            <img src="visa.png" alt="Visa" class="payment-image">
+                        </div>
+                        <div class="payment-icon">
+                            <img src="apple-pay.png" alt="Apple Pay" class="payment-image">
+                        </div>
+                        <div class="payment-icon">
+                            <img src="paypal.png" alt="PayPal" class="payment-image">
+                        </div>
+                        <div class="payment-icon">
+                            <img src="google-pay.png" alt="Google Pay" class="payment-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Chat Button -->
+    <div class="chat-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+        </svg>
+    </div>
+
+    <!-- Product Data for this specific product -->
+    <script>
+        window.currentProductData = {
+            id: 13,
+            name: "2024 Topps Cosmic Chrome Football Hobby Box",
+            type: "Football Cards",
+            price: 629.99,
+            brand: "Topps",
+            sport: "football",
+            productType: "hobby",
+            availability: "preorder",
+            image: "cosmic-chrome24.png"
+        };
+    </script>
+
+    <script src="products.js"></script>
+    <script src="product-detail.js"></script>
+</body>
+</html>

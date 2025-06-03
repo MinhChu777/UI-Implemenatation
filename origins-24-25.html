@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024-25 Panini Origins Basketball H2 Box - Butler Trading Cards</title>
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="product-detail.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+              <a href="Homepage.html" class="logo-link">
+                <img src="butler.png" alt="Butler Trading Cards" class="logo-img">
+              </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="Homepage.html">HOME</a></li>
+                    <li><a href="products.html">PRODUCTS</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-right">
+                <div class="search-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search products..." class="search-input" id="searchInput" autocomplete="off">
+                        <button class="search-btn" type="button" id="searchBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="header-actions">
+                    <a href="#" class="account-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </a>
+                    <div class="cart-container">
+                        <a href="#" class="cart-btn" id="cartToggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            <span class="cart-badge" id="cartBadge">0</span>
+                        </a>
+                        
+                        <!-- Cart Dropdown -->
+                        <div class="cart-dropdown" id="cartDropdown">
+                            <div class="cart-header">
+                                <h3>Shopping Cart</h3>
+                                <span class="cart-close" id="cartClose">&times;</span>
+                            </div>
+                            <div class="cart-items" id="cartItems">
+                                <div class="empty-cart">
+                                    <p>Your cart is empty</p>
+                                </div>
+                            </div>
+                            <div class="cart-footer">
+                                <div class="cart-total">
+                                    <strong>Total: $<span id="cartTotal">0.00</span></strong>
+                                </div>
+                                <button class="checkout-btn">CHECKOUT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="Homepage.html">Home</a> > <a href="products.html">Products</a> > 2024-25 Panini Origins Basketball H2 Box
+            </div>
+            
+            <div class="product-detail-container">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="origins24-25.png" alt="2024-25 Panini Origins Basketball H2 Box" class="main-img">
+                        <div class="availability-badge-detail instock">IN STOCK</div>
+                    </div>
+                    <div class="thumbnail-images">
+                        <div class="thumbnail active" onclick="selectThumbnail(this, 'origins24-25.png')">
+                            <img src="origins24-25.png" alt="2024-25 Panini Origins Basketball H2 Box - Main View">
+                        </div>
+                        <div class="thumbnail" onclick="selectThumbnail(this, 'origins24-25.png')">
+                            <img src="origins24-25.png" alt="2024-25 Panini Origins Basketball H2 Box - Side View">
+                        </div>
+                        <div class="thumbnail" onclick="selectThumbnail(this, 'origins24-25.png')">
+                            <img src="origins24-25.png" alt="2024-25 Panini Origins Basketball H2 Box - Back View">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Information -->
+                <div class="product-info-detail">
+                    <h1 class="product-title">2024-25 Panini Origins Basketball H2 Box</h1>
+                    <div class="product-meta-detail">
+                        <span class="product-brand-detail">PANINI</span>
+                        <span class="product-type-badge-detail">BLASTER</span>
+                    </div>
+                    
+                    <div class="price-detail">$249.99 AUD</div>
+                    
+                    <div class="quantity-section">
+                        <label for="quantity">Quantity:</label>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn-detail" id="decreaseQty">−</button>
+                            <input type="number" id="quantity" value="1" min="1" class="quantity-input-detail">
+                            <button class="quantity-btn-detail" id="increaseQty">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="add-to-cart-detail" id="addToCartBtn">ADD TO CART</button>
+                        <button class="buy-now-btn" id="buyNowBtn">BUY NOW</button>
+                    </div>
+                    
+                    <!-- Expandable Sections -->
+                    <div class="product-sections">
+                        <div class="section-item">
+                            <div class="section-header" onclick="toggleSection(this)">
+                                <span>DESCRIPTION</span>
+                                <span class="section-toggle">∨</span>
+                            </div>
+                            <div class="section-content">
+                                <div class="section-inner">
+                                    <div class="highlight-box">
+                                        <h3>Look For Popular SSP Insert Snake Eyes</h3>
+                                    </div>
+                                    
+                                    <p><strong>Origins is back for the 2024-25 NBA season! Look for a stunning display of Autograph, Memorabilia and Insert/Parallel Content!</strong></p>
+                                    
+                                    <div class="feature-section">
+                                        <h4>H2 Box Configuration</h4>
+                                        <ul>
+                                            <li><strong>6 Cards Per Pack, 6 Packs Per Box</strong></li>
+                                            <li><strong>Six Inserts/Insert Parallels Per Box!</strong></li>
+                                            <li><strong>Two Base Cards Per Box!</strong></li>
+                                            <li><strong>H2 Blaster Format:</strong> Premium blaster with exclusive content</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Autograph Content</h4>
+                                        <ul>
+                                            <li><strong>Rookie Jersey Autographs:</strong> Hot rookies from the 2024 NBA Draft with jersey pieces</li>
+                                            <li><strong>Rookie Autographs:</strong> First-year player signature cards</li>
+                                            <li><strong>Elevation Signatures:</strong> Premium autograph collection</li>
+                                            <li><strong>Universal Autographs:</strong> Current and retired player signatures</li>
+                                            <li><strong>H2 Blaster-Exclusive Turquoise Parallels:</strong> Randomly inserted in autograph sets</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>SSP Snake Eyes Chase</h4>
+                                        <ul>
+                                            <li><strong>Snake Eyes SSP:</strong> Popular super short print insert exclusive to H2 Blasters!</li>
+                                            <li><strong>White Snake Eyes:</strong> Features the best of the best players</li>
+                                            <li><strong>Black Snake Eyes:</strong> Premium version featuring elite NBA stars</li>
+                                            <li><strong>H2 Blaster Exclusive:</strong> Cannot be found in any other product format</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>2024 NBA Draft Focus</h4>
+                                        <ul>
+                                            <li><strong>Hot Rookies:</strong> Features top picks from the 2024 NBA Draft</li>
+                                            <li><strong>Jersey Autographs:</strong> Game-used jersey pieces with on-card signatures</li>
+                                            <li><strong>First Cards:</strong> Among the first cards featuring 2024 rookies</li>
+                                            <li><strong>Investment Potential:</strong> Target emerging stars for long-term value</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="section-item">
+                            <div class="section-header" onclick="toggleSection(this)">
+                                <span>H2 BLASTER EXCLUSIVES</span>
+                                <span class="section-toggle">∨</span>
+                            </div>
+                            <div class="section-content collapsed">
+                                <div class="section-inner">
+                                    <div class="feature-section">
+                                        <h4>Exclusive Turquoise Parallels</h4>
+                                        <ul>
+                                            <li><strong>H2 Blaster-Exclusive:</strong> Turquoise parallels only found in H2 Blaster format</li>
+                                            <li><strong>Autograph Integration:</strong> Available across various autograph sets</li>
+                                            <li><strong>Random Insertion:</strong> Randomly inserted throughout autograph content</li>
+                                            <li><strong>Premium Appeal:</strong> Unique color scheme exclusive to this format</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Snake Eyes Exclusivity</h4>
+                                        <ul>
+                                            <li><strong>Format Exclusive:</strong> Snake Eyes SSP inserts are exclusive to H2 Blasters</li>
+                                            <li><strong>Two Variants:</strong> White Snake Eyes and Black Snake Eyes designs</li>
+                                            <li><strong>Elite Player Focus:</strong> Features only the best NBA players</li>
+                                            <li><strong>Collector Demand:</strong> Highly sought-after due to exclusivity and rarity</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Content Breakdown Per Box</h4>
+                                        <ul>
+                                            <li><strong>6 Insert/Insert Parallels:</strong> Guaranteed premium insert content</li>
+                                            <li><strong>2 Base Parallels:</strong> Enhanced base card variations</li>
+                                            <li><strong>Potential Autographs:</strong> Chance for multiple autograph types</li>
+                                            <li><strong>Memorabilia Opportunities:</strong> Jersey and patch content possible</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>What Makes Origins Special</h4>
+                                        <ul>
+                                            <li><strong>Unique Design:</strong> Distinctive artistic approach to basketball cards</li>
+                                            <li><strong>Memorabilia Integration:</strong> Premium jersey and patch content</li>
+                                            <li><strong>Rookie Focus:</strong> Emphasis on emerging NBA talent</li>
+                                            <li><strong>Blaster Value:</strong> High-end content in accessible format</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="section-item">
+                            <div class="section-header" onclick="toggleSection(this)">
+                                <span>COLLECTING STRATEGY</span>
+                                <span class="section-toggle">∨</span>
+                            </div>
+                            <div class="section-content collapsed">
+                                <div class="section-inner">
+                                    <div class="feature-section">
+                                        <h4>Snake Eyes Chase Strategy</h4>
+                                        <ul>
+                                            <li><strong>SSP Rarity:</strong> Super short print status makes these extremely valuable</li>
+                                            <li><strong>Player Selection:</strong> Focus on established superstars and rising stars</li>
+                                            <li><strong>Condition Importance:</strong> Fresh pack condition essential for maximum value</li>
+                                            <li><strong>Market Demand:</strong> High collector interest drives strong secondary market</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Rookie Investment Focus</h4>
+                                        <ul>
+                                            <li><strong>2024 Draft Class:</strong> Target top picks with high ceiling potential</li>
+                                            <li><strong>Jersey Autographs:</strong> Dual appeal of signature and memorabilia</li>
+                                            <li><strong>Early Entry:</strong> Get in early on rookie cards before price appreciation</li>
+                                            <li><strong>Long-term Hold:</strong> Origins rookies historically appreciate well</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Parallel Collecting</h4>
+                                        <ul>
+                                            <li><strong>Turquoise Exclusives:</strong> Build sets of H2 Blaster-exclusive parallels</li>
+                                            <li><strong>Base Parallel Variety:</strong> Multiple parallel options for set building</li>
+                                            <li><strong>Insert Parallels:</strong> Enhanced versions of popular insert sets</li>
+                                            <li><strong>Team Collecting:</strong> Focus on favorite teams across all parallel types</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Box Breaking Tips</h4>
+                                        <ul>
+                                            <li><strong>Even Distribution:</strong> 6 packs provide good content spread</li>
+                                            <li><strong>Guaranteed Hits:</strong> Expect consistent insert and parallel content</li>
+                                            <li><strong>Autograph Potential:</strong> Multiple chances for signature cards</li>
+                                            <li><strong>SSP Hunting:</strong> Every box has potential for Snake Eyes chase cards</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="section-item">
+                            <div class="section-header" onclick="toggleSection(this)">
+                                <span>SHIPPING & RETURNS</span>
+                                <span class="section-toggle">∨</span>
+                            </div>
+                            <div class="section-content collapsed">
+                                <div class="section-inner">
+                                    <div class="feature-section">
+                                        <h4>Free Worldwide Shipping on Singles Orders</h4>
+                                        <p><strong>Spend $75 or more on Singles for FREE SHIPPING Worldwide.</strong></p>
+                                        <p>All international shipping is tracked. Domestic orders can be sent for $2 without tracking, if preferred.</p>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Shipping Options</h4>
+                                        <ul>
+                                            <li><strong>Standard Shipping:</strong> 5-10 business days</li>
+                                            <li><strong>Express Shipping:</strong> 2-5 business days</li>
+                                            <li><strong>Tracked International:</strong> 7-21 business days</li>
+                                            <li><strong>All orders</strong> are dispatched within 1-2 business days</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Returns Policy</h4>
+                                        <p><strong>30-day return policy</strong> on unopened products. Items must be in original condition with all seals intact.</p>
+                                        <ul>
+                                            <li>Unopened products only</li>
+                                            <li>Original packaging required</li>
+                                            <li>Return shipping at buyer's expense</li>
+                                            <li>Refund processed within 5-7 business days</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>H2 Blaster Protection</h4>
+                                        <ul>
+                                            <li><strong>Secure Packaging:</strong> All H2 Blaster boxes carefully protected during shipping</li>
+                                            <li><strong>Factory Fresh:</strong> Direct from Panini distribution</li>
+                                            <li><strong>Condition Guarantee:</strong> Undamaged packaging guaranteed</li>
+                                            <li><strong>Exclusive Content Protection:</strong> Special handling for limited edition products</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- You May Also Like Section -->
+            <div class="related-products">
+                <h2 class="related-title">YOU MAY ALSO LIKE</h2>
+                <div class="related-grid">
+                    <div class="related-product-card" onclick="window.location.href='donruss-24-25.html'">
+                        <div class="related-product-img">
+                            <img src="donruss24-25.png" alt="2024-25 Donruss Basketball Hobby Box">
+                        </div>
+                        <div class="related-product-info">
+                            <h4>2024-25 Donruss Basketball Hobby Box</h4>
+                            <div class="related-product-price">$159.99 AUD</div>
+                        </div>
+                    </div>
+                    
+                    <div class="related-product-card" onclick="window.location.href='select-24-25.html'">
+                        <div class="related-product-img">
+                            <img src="select24-25.png" alt="2024-25 Panini Select Basketball Hobby Box">
+                        </div>
+                        <div class="related-product-info">
+                            <h4>2024-25 Panini Select Basketball Hobby Box</h4>
+                            <div class="related-product-price">$799.99 AUD</div>
+                        </div>
+                    </div>
+                    
+                    <div class="related-product-card" onclick="window.location.href='prizm-24-25.html'">
+                        <div class="related-product-img">
+                            <img src="prizm24-25.png" alt="2024-25 Panini NBA Basketball Prizm 12-Card Hobby Pack">
+                        </div>
+                        <div class="related-product-info">
+                            <h4>2024-25 Panini NBA Basketball Prizm 12-Card Hobby Pack</h4>
+                            <div class="related-product-price">$120.00 AUD</div>
+                        </div>
+                    </div>
+                    
+                    <div class="see-more-card" onclick="window.location.href='products.html'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#e83e8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="M12 5l7 7-7 7"></path>
+                        </svg>
+                        <span>SEE MORE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo Section -->
+                <div class="footer-logo-section">
+                    <img src="butler.png" alt="Butler Trading Cards" class="footer-logo">
+                </div>
+                
+                <!-- Links Section -->
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="about.html">About</a>
+                        <a href="products.html">Products</a>
+                        <a href="contact.html">Contact us</a>
+                    </div>
+                    <div class="footer-column">
+                        <a href="privacy.html">Privacy policy</a>
+                        <a href="refund.html">Refund policy</a>
+                        <a href="shipping.html">Shipping policy</a>
+                        <a href="tos.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2025 Butler Trading Cards. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/g/16JAkQLR5U/" target="_blank" class="social-link facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/butler.trading.cards?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-link instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="http://www.youtube.com/@butlertradingcards" target="_blank" class="social-link youtube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                            </svg>
+                        </a>
+                        <a href="https://www.whatnot.com/s/WKpFWcEk" target="_blank" class="social-link whatnot">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Payment Methods -->
+                <div class="payment-methods">
+                    <span>We accept:</span>
+                    <div class="payment-icons">
+                        <div class="payment-icon">
+                            <img src="visa.png" alt="Visa" class="payment-image">
+                        </div>
+                        <div class="payment-icon">
+                            <img src="apple-pay.png" alt="Apple Pay" class="payment-image">
+                        </div>
+                        <div class="payment-icon">
+                            <img src="paypal.png" alt="PayPal" class="payment-image">
+                        </div>
+                        <div class="payment-icon">
+                            <img src="google-pay.png" alt="Google Pay" class="payment-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Chat Button -->
+    <div class="chat-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+        </svg>
+    </div>
+
+    <!-- Product Data for this specific product -->
+    <script>
+        window.currentProductData = {
+            id: 10,
+            name: "2024-25 Panini Origins Basketball H2 Box",
+            type: "NBA Trading Cards",
+            price: 249.99,
+            brand: "Panini",
+            sport: "basketball",
+            productType: "blaster",
+            availability: "instock",
+            image: "origins24-25.png"
+        };
+    </script>
+
+    <script src="products.js"></script>
+    <script src="product-detail.js"></script>
+</body>
+</html>

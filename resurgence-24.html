@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 Topps Resurgence Football Mega Box - Butler Trading Cards</title>
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="product-detail.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+              <a href="Homepage.html" class="logo-link">
+                <img src="butler.png" alt="Butler Trading Cards" class="logo-img">
+              </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="Homepage.html">HOME</a></li>
+                    <li><a href="products.html">PRODUCTS</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-right">
+                <div class="search-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search products..." class="search-input" id="searchInput" autocomplete="off">
+                        <button class="search-btn" type="button" id="searchBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="header-actions">
+                    <a href="#" class="account-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </a>
+                    <div class="cart-container">
+                        <a href="#" class="cart-btn" id="cartToggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            <span class="cart-badge" id="cartBadge">0</span>
+                        </a>
+                        
+                        <!-- Cart Dropdown -->
+                        <div class="cart-dropdown" id="cartDropdown">
+                            <div class="cart-header">
+                                <h3>Shopping Cart</h3>
+                                <span class="cart-close" id="cartClose">&times;</span>
+                            </div>
+                            <div class="cart-items" id="cartItems">
+                                <div class="empty-cart">
+                                    <p>Your cart is empty</p>
+                                </div>
+                            </div>
+                            <div class="cart-footer">
+                                <div class="cart-total">
+                                    <strong>Total: $<span id="cartTotal">0.00</span></strong>
+                                </div>
+                                <button class="checkout-btn">CHECKOUT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="Homepage.html">Home</a> > <a href="products.html">Products</a> > 2024 Topps Resurgence Football Mega Box
+            </div>
+            
+            <div class="product-detail-container">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="resurgence24.png" alt="2024 Topps Resurgence Football Mega Box" class="main-img">
+                        <div class="availability-badge-detail preorder">PRE-ORDER</div>
+                    </div>
+                    <div class="thumbnail-images">
+                        <div class="thumbnail active" onclick="selectThumbnail(this, 'resurgence24.png')">
+                            <img src="resurgence24.png" alt="2024 Topps Resurgence Football Mega Box - Main View">
+                        </div>
+                        <div class="thumbnail" onclick="selectThumbnail(this, 'resurgence24.png')">
+                            <img src="resurgence24.png" alt="2024 Topps Resurgence Football Mega Box - Side View">
+                        </div>
+                        <div class="thumbnail" onclick="selectThumbnail(this, 'resurgence24.png')">
+                            <img src="resurgence24.png" alt="2024 Topps Resurgence Football Mega Box - Back View">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Information -->
+                <div class="product-info-detail">
+                    <h1 class="product-title">2024 Topps Resurgence Football Mega Box</h1>
+                    <div class="product-meta-detail">
+                        <span class="product-brand-detail">TOPPS</span>
+                        <span class="product-type-badge-detail">BLASTER</span>
+                    </div>
+                    
+                    <div class="price-detail">$99.99 AUD</div>
+                    
+                    <div class="quantity-section">
+                        <label for="quantity">Quantity:</label>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn-detail" id="decreaseQty">−</button>
+                            <input type="number" id="quantity" value="1" min="1" class="quantity-input-detail">
+                            <button class="quantity-btn-detail" id="increaseQty">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="add-to-cart-detail" id="addToCartBtn">PRE-ORDER NOW</button>
+                        <button class="buy-now-btn" id="buyNowBtn">RESERVE NOW</button>
+                    </div>
+                    
+                    <!-- Expandable Sections -->
+                    <div class="product-sections">
+                        <div class="section-item">
+                            <div class="section-header" onclick="toggleSection(this)">
+                                <span>DESCRIPTION</span>
+                                <span class="section-toggle">∨</span>
+                            </div>
+                            <div class="section-content">
+                                <div class="section-inner">
+                                    <div class="highlight-box">
+                                        <h3>Look For EXCLUSIVE Electro-Lights Inserts!</h3>
+                                    </div>
+                                    
+                                    <p><strong>Topps is bringing the power to the cards in the brand-new Resurgence Football! Making its debut, 2024 Topps Resurgence Football is finally here. Look for cards of the most electrifying athletes in all of football!</strong></p>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Mega Box Configuration</h4>
+                                        <ul>
+                                            <li><strong>6 Cards Per Pack, 8 Packs Per Box</strong></li>
+                                            <li><strong>Two Base Card Refractors Per Box!</strong></li>
+                                            <li><strong>Four Insert Cards Per Box!</strong></li>
+                                            <li><strong>Four Base Card Blue & Orange Spark Parallels!</strong></li>
+                                            <li><strong>One Base Card Prism Parallel Per Box!</strong></li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Brand New Football Product</h4>
+                                        <ul>
+                                            <li><strong>Debut Release:</strong> Brand-new Topps Resurgence Football making its first appearance</li>
+                                            <li><strong>Electrifying Athletes:</strong> Features the most exciting players in football</li>
+                                            <li><strong>Power Theme:</strong> Electric-themed design with surge and power parallels</li>
+                                            <li><strong>Cutting-Edge Technology:</strong> Advanced refractor and parallel systems</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Exclusive Content</h4>
+                                        <ul>
+                                            <li><strong>Electro-Lights Inserts:</strong> EXCLUSIVE to Mega and Value boxes!</li>
+                                            <li><strong>Prism Parallels:</strong> Mega and Value exclusive parallel type</li>
+                                            <li><strong>Sky Blue & Pink Shock:</strong> Value exclusive parallels</li>
+                                            <li><strong>Enhanced Odds:</strong> Better pull rates in mega box format</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Insert Sets</h4>
+                                        <ul>
+                                            <li><strong>Glimmer and Gleam:</strong> Shimmering player highlights</li>
+                                            <li><strong>Voltaic:</strong> Electric energy themed inserts</li>
+                                            <li><strong>Circuit Breakers:</strong> Game-changing moment captures</li>
+                                            <li><strong>Conductors:</strong> Leadership and playmaking focus</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="section-item">
+                            <div class="section-header" onclick="toggleSection(this)">
+                                <span>PARALLEL SYSTEM & NUMBERING</span>
+                                <span class="section-toggle">∨</span>
+                            </div>
+                            <div class="section-content collapsed">
+                                <div class="section-inner">
+                                    <div class="feature-section">
+                                        <h4>Base/Rookie Card Parallels</h4>
+                                        <ul>
+                                            <li><span class="parallel-special">Refractor:</span> Standard enhanced finish</li>
+                                            <li><span class="parallel-special">Prism:</span> 1 per box - Mega and Value Exclusive</li>
+                                            <li><span class="parallel-tie-dye">Surge:</span> Numbered to 399</li>
+                                            <li><span class="parallel-tie-dye">Navy Surge:</span> Numbered to 275</li>
+                                            <li><span class="parallel-tie-dye">Aqua Surge:</span> Numbered to 249</li>
+                                            <li><span class="parallel-gold">Yellow Surge:</span> Numbered to 225</li>
+                                            <li><span class="parallel-special">Crimson Surge:</span> Numbered to 199</li>
+                                            <li><span class="parallel-green">Green Surge:</span> Numbered to 175</li>
+                                            <li><span class="parallel-tie-dye">Teal Surge:</span> Numbered to 149</li>
+                                            <li><span class="parallel-gold">White Surge:</span> Numbered to 125</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Power Surge Parallels (Ultra-Rare)</h4>
+                                        <ul>
+                                            <li><span class="parallel-green">Blue Surge:</span> Numbered to 99</li>
+                                            <li><span class="parallel-special">Purple Surge:</span> Numbered to 75</li>
+                                            <li><span class="parallel-gold">Gold Power Surge:</span> Numbered to 50</li>
+                                            <li><span class="parallel-gold">Orange Power Surge:</span> Numbered to 25</li>
+                                            <li><span class="parallel-gold">Lime Green Power Surge:</span> Numbered to 15</li>
+                                            <li><span class="parallel-special">Pink Power Surge:</span> Numbered to 10</li>
+                                            <li><span class="parallel-special">Red Power Surge:</span> Numbered to 5</li>
+                                            <li><span class="parallel-black">Superfractor:</span> Numbered 1-of-1</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Value Exclusive Parallels</h4>
+                                        <ul>
+                                            <li><span class="parallel-tie-dye">Sky Blue Shock:</span> Value Exclusive</li>
+                                            <li><span class="parallel-special">Pink Shock:</span> Value Exclusive</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Insert Card Parallels</h4>
+                                        <p><strong>All insert sets (Glimmer and Gleam, Voltaic, Circuit Breakers, Conductors) available in:</strong></p>
+                                        <ul>
+                                            <li>Refractor base parallel</li>
+                                            <li>Navy Surge through Red Power Surge (same numbering as base)</li>
+                                            <li>Superfractor 1-of-1 versions</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="section-item">
+                            <div class="section-header" onclick="toggleSection(this)">
+                                <span>AUTOGRAPHS & RELICS</span>
+                                <span class="section-toggle">∨</span>
+                            </div>
+                            <div class="section-content collapsed">
+                                <div class="section-inner">
+                                    <div class="feature-section">
+                                        <h4>Autograph Sets</h4>
+                                        <ul>
+                                            <li><strong>Resurgence Signatures:</strong> Veteran player autographs</li>
+                                            <li><strong>Resurgence Rookie Signatures:</strong> First-year player autographs</li>
+                                            <li><strong>Arc Flash Signatures:</strong> Electric-themed autograph design</li>
+                                            <li><strong>Radial Marks:</strong> Premium autograph collection</li>
+                                            <li><strong>Molecular Marks:</strong> Scientific-themed signature cards</li>
+                                            <li><strong>Surge Protectors:</strong> Defensive player autographs</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Autographed Relic Cards</h4>
+                                        <ul>
+                                            <li><strong>Resurgence Rookie Patch Autographs:</strong> First-year players with jersey pieces</li>
+                                            <li><strong>Amped Up Rookie Patch Autographs:</strong> Enhanced rookie memorabilia</li>
+                                            <li><strong>Ignite Rookie Patch Autographs:</strong> Premium rookie patch content</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Autograph Parallel Numbering</h4>
+                                        <ul>
+                                            <li><strong>Standard Autographs:</strong> Blue Surge (/99) through Superfractor (1/1)</li>
+                                            <li><strong>Rookie Autographs:</strong> Aqua Surge (/249) through Superfractor (1/1)</li>
+                                            <li><strong>Patch Autographs:</strong> White Surge (/125) through Superfractor (1/1)</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Case Hits & SSP Inserts</h4>
+                                        <ul>
+                                            <li><strong>Electro-Lights:</strong> Mega and Value Exclusive super short prints</li>
+                                            <li><strong>Retro Vision:</strong> Throwback-themed case hit inserts</li>
+                                            <li><strong>Sign Off:</strong> Premium autograph case hits</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="section-item">
+                            <div class="section-header" onclick="toggleSection(this)">
+                                <span>SHIPPING & RETURNS</span>
+                                <span class="section-toggle">∨</span>
+                            </div>
+                            <div class="section-content collapsed">
+                                <div class="section-inner">
+                                    <div class="feature-section">
+                                        <h4>Pre-Order Information</h4>
+                                        <p><strong>Reserve your 2024 Topps Resurgence Football Mega Box today!</strong></p>
+                                        <ul>
+                                            <li><strong>Expected Release:</strong> Product releases as soon as available</li>
+                                            <li><strong>Payment:</strong> Full payment required to secure pre-order</li>
+                                            <li><strong>Guarantee:</strong> Reserved allocation ensures you receive your box</li>
+                                            <li><strong>Updates:</strong> Email notifications about release status</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Free Worldwide Shipping on Singles Orders</h4>
+                                        <p><strong>Spend $75 or more on Singles for FREE SHIPPING Worldwide.</strong></p>
+                                        <p>All international shipping is tracked. Domestic orders can be sent for $2 without tracking, if preferred.</p>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Shipping Options</h4>
+                                        <ul>
+                                            <li><strong>Standard Shipping:</strong> 5-10 business days (after release)</li>
+                                            <li><strong>Express Shipping:</strong> 2-5 business days (after release)</li>
+                                            <li><strong>Tracked International:</strong> 7-21 business days (after release)</li>
+                                            <li><strong>All orders</strong> dispatched within 1-2 business days of product release</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="feature-section">
+                                        <h4>Returns Policy</h4>
+                                        <p><strong>30-day return policy</strong> on unopened products. Items must be in original condition with all seals intact.</p>
+                                        <ul>
+                                            <li>Unopened products only</li>
+                                            <li>Original packaging required</li>
+                                            <li>Return shipping at buyer's expense</li>
+                                            <li>Refund processed within 5-7 business days</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- You May Also Like Section -->
+            <div class="related-products">
+                <h2 class="related-title">YOU MAY ALSO LIKE</h2>
+                <div class="related-grid">
+                    <div class="related-product-card" onclick="window.location.href='cosmic-chrome-24.html'">
+                        <div class="related-product-img">
+                            <img src="cosmic-chrome24.png" alt="2024 Topps Cosmic Chrome Football Hobby Box">
+                        </div>
+                        <div class="related-product-info">
+                            <h4>2024 Topps Cosmic Chrome Football Hobby Box</h4>
+                            <div class="related-product-price">$629.99 AUD</div>
+                        </div>
+                    </div>
+                    
+                    <div class="related-product-card" onclick="window.location.href='prizm-24-25.html'">
+                        <div class="related-product-img">
+                            <img src="prizm24-25.png" alt="2024-25 Panini NBA Basketball Prizm 12-Card Hobby Pack">
+                        </div>
+                        <div class="related-product-info">
+                            <h4>2024-25 Panini NBA Basketball Prizm 12-Card Hobby Pack</h4>
+                            <div class="related-product-price">$120.00 AUD</div>
+                        </div>
+                    </div>
+                    
+                    <div class="related-product-card" onclick="window.location.href='select-baseball-24.html'">
+                        <div class="related-product-img">
+                            <img src="select-baseball24.png" alt="2024 Panini Select Baseball Blaster Box">
+                        </div>
+                        <div class="related-product-info">
+                            <h4>2024 Panini Select Baseball Blaster Box</h4>
+                            <div class="related-product-price">$45.99 AUD</div>
+                        </div>
+                    </div>
+                    
+                    <div class="see-more-card" onclick="window.location.href='products.html'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#e83e8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="M12 5l7 7-7 7"></path>
+                        </svg>
+                        <span>SEE MORE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo Section -->
+                <div class="footer-logo-section">
+                    <img src="butler.png" alt="Butler Trading Cards" class="footer-logo">
+                </div>
+                
+                <!-- Links Section -->
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="about.html">About</a>
+                        <a href="products.html">Products</a>
+                        <a href="contact.html">Contact us</a>
+                    </div>
+                    <div class="footer-column">
+                        <a href="privacy.html">Privacy policy</a>
+                        <a href="refund.html">Refund policy</a>
+                        <a href="shipping.html">Shipping policy</a>
+                        <a href="tos.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2025 Butler Trading Cards. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/g/16JAkQLR5U/" target="_blank" class="social-link facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/butler.trading.cards?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-link instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="http://www.youtube.com/@butlertradingcards" target="_blank" class="social-link youtube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                            </svg>
+                        </a>
+                        <a href="https://www.whatnot.com/s/WKpFWcEk" target="_blank" class="social-link whatnot">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Payment Methods -->
+                <div class="payment-methods">
+                    <span>We accept:</span>
+                    <div class="payment-icons">
+                        <div class="payment-icon">
+                            <img src="visa.png" alt="Visa" class="payment-image">
+                        </div>
+                        <div class="payment-icon">
+                            <img src="apple-pay.png" alt="Apple Pay" class="payment-image">
+                        </div>
+                        <div class="payment-icon">
+                            <img src="paypal.png" alt="PayPal" class="payment-image">
+                        </div>
+                        <div class="payment-icon">
+                            <img src="google-pay.png" alt="Google Pay" class="payment-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Chat Button -->
+    <div class="chat-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+        </svg>
+    </div>
+
+    <!-- Product Data for this specific product -->
+    <script>
+        window.currentProductData = {
+            id: 12,
+            name: "2024 Topps Resurgence Football Mega Box",
+            type: "Football Cards",
+            price: 99.99,
+            brand: "Topps",
+            sport: "football",
+            productType: "blaster",
+            availability: "preorder",
+            image: "resurgence24.png"
+        };
+    </script>
+
+    <script src="products.js"></script>
+    <script src="product-detail.js"></script>
+</body>
+</html>
