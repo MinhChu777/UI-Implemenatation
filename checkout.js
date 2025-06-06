@@ -1,4 +1,4 @@
-// Checkout Page JavaScript
+// Checkout Page JavaScript - Updated for New Layout
 
 let checkoutCart = {
     items: [],

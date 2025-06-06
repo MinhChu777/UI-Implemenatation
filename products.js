@@ -225,6 +225,198 @@ const cart = {
     }
 };
 
+// Enhanced search functionality with suggestions
+const initializeSearchSuggestions = function() {
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const searchContainer = document.querySelector('.search-container');
+    
+    if (!searchInput || !searchContainer) return; // Exit if search elements don't exist
+    
+    // Create search suggestions dropdown if it doesn't exist
+    let searchSuggestions = document.getElementById('searchSuggestions');
+    if (!searchSuggestions) {
+        searchSuggestions = document.createElement('div');
+        searchSuggestions.className = 'search-suggestions';
+        searchSuggestions.id = 'searchSuggestions';
+        searchContainer.appendChild(searchSuggestions);
+    }
+    
+    let currentHighlight = -1;
+    let filteredSuggestions = [];
+    
+    // Function to filter suggestions based on input
+    function filterSuggestions(query) {
+        if (query.length < 2) return [];
+        
+        return products.filter(product => 
+            product.name.toLowerCase().includes(query.toLowerCase()) ||
+            product.type.toLowerCase().includes(query.toLowerCase()) ||
+            product.brand.toLowerCase().includes(query.toLowerCase()) ||
+            product.sport.toLowerCase().includes(query.toLowerCase())
+        );
+    }
+    
+    // Function to create suggestion HTML
+    function createSuggestionHTML(product, index) {
+        return `
+            <div class="suggestion-item" data-index="${index}" data-name="${product.name}" data-id="${product.id}" data-detail-page="${product.detailPage}">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <div>${product.name}</div>
+                        <div class="suggestion-category">${product.type}</div>
+                    </div>
+                    <div class="suggestion-price">$${product.price.toFixed(2)}</div>
+                </div>
+            </div>
+        `;
+    }
+    
+    // Function to show suggestions
+    function showSuggestions(suggestions) {
+        if (suggestions.length === 0) {
+            searchSuggestions.innerHTML = '<div class="no-suggestions">No products found</div>';
+        } else {
+            searchSuggestions.innerHTML = suggestions
+                .map((product, index) => createSuggestionHTML(product, index))
+                .join('');
+        }
+        
+        searchSuggestions.classList.add('active');
+        currentHighlight = -1;
+    }
+    
+    // Function to hide suggestions
+    function hideSuggestions() {
+        searchSuggestions.classList.remove('active');
+        currentHighlight = -1;
+    }
+    
+    // Function to highlight suggestion
+    function highlightSuggestion(index) {
+        const items = searchSuggestions.querySelectorAll('.suggestion-item');
+        
+        // Remove previous highlight
+        items.forEach(item => item.classList.remove('highlighted'));
+        
+        // Add new highlight
+        if (index >= 0 && index < items.length) {
+            items[index].classList.add('highlighted');
+            currentHighlight = index;
+        }
+    }
+    
+    // Function to select suggestion - navigates to product detail page
+    function selectSuggestion(productId, productName, detailPage) {
+        searchInput.value = productName;
+        hideSuggestions();
+        
+        console.log('Selected product:', productName, 'ID:', productId);
+        
+        // Navigate to specific product detail page if available
+        if (detailPage) {
+            window.location.href = detailPage;
+        } else if (productId) {
+            // Use the existing goToProductDetail function
+            goToProductDetail(productId);
+        } else {
+            // Fallback: perform search filtering
+            filterProducts();
+        }
+    }
+    
+    // Event listeners
+    if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+            const query = e.target.value.trim();
+            
+            if (query.length >= 2) {
+                filteredSuggestions = filterSuggestions(query);
+                showSuggestions(filteredSuggestions);
+            } else {
+                hideSuggestions();
+            }
+        });
+        
+        // Keyboard navigation
+        searchInput.addEventListener('keydown', function(e) {
+            const items = searchSuggestions.querySelectorAll('.suggestion-item');
+            
+            switch (e.key) {
+                case 'ArrowDown':
+                    e.preventDefault();
+                    if (currentHighlight < items.length - 1) {
+                        highlightSuggestion(currentHighlight + 1);
+                    }
+                    break;
+                    
+                case 'ArrowUp':
+                    e.preventDefault();
+                    if (currentHighlight > 0) {
+                        highlightSuggestion(currentHighlight - 1);
+                    }
+                    break;
+                    
+                case 'Enter':
+                    e.preventDefault();
+                    if (currentHighlight >= 0 && items[currentHighlight]) {
+                        const productId = items[currentHighlight].getAttribute('data-id');
+                        const productName = items[currentHighlight].getAttribute('data-name');
+                        const detailPage = items[currentHighlight].getAttribute('data-detail-page');
+                        selectSuggestion(parseInt(productId), productName, detailPage);
+                    } else {
+                        // Perform regular search filtering
+                        filterProducts();
+                        hideSuggestions();
+                    }
+                    break;
+                    
+                case 'Escape':
+                    hideSuggestions();
+                    searchInput.blur();
+                    break;
+            }
+        });
+        
+        // Focus events
+        searchInput.addEventListener('focus', function() {
+            const query = this.value.trim();
+            if (query.length >= 2) {
+                filteredSuggestions = filterSuggestions(query);
+                showSuggestions(filteredSuggestions);
+            }
+        });
+    }
+    
+    // Click on suggestions
+    if (searchSuggestions) {
+        searchSuggestions.addEventListener('click', function(e) {
+            const suggestionItem = e.target.closest('.suggestion-item');
+            if (suggestionItem) {
+                const productId = suggestionItem.getAttribute('data-id');
+                const productName = suggestionItem.getAttribute('data-name');
+                const detailPage = suggestionItem.getAttribute('data-detail-page');
+                selectSuggestion(parseInt(productId), productName, detailPage);
+            }
+        });
+    }
+    
+    // Search button click
+    if (searchBtn) {
+        searchBtn.addEventListener('click', function() {
+            filterProducts();
+            hideSuggestions();
+        });
+    }
+    
+    // Hide suggestions when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.search-container')) {
+            hideSuggestions();
+        }
+    });
+};
+
 // Filter toggle functionality
 function toggleFilter(header) {
     const section = header.parentElement;
@@ -331,10 +523,6 @@ function sortProducts() {
             break;
         case 'price-high':
             filteredProducts.sort((a, b) => b.price - a.price);
-            break;
-        case 'newest':
-            // Sort by ID descending (assuming higher ID = newer)
-            filteredProducts.sort((a, b) => b.id - a.id);
             break;
         case 'popularity':
             // Sort by a combination of factors (lower price + basketball sport gets higher score)
@@ -553,6 +741,9 @@ function clearAllFilters() {
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize cart from localStorage
     cart.loadFromLocalStorage();
+    
+    // Initialize search suggestions
+    initializeSearchSuggestions();
     
     // Make sure cart functions are globally accessible
     window.cart = cart;

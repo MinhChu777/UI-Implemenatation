@@ -1,5 +1,21 @@
 /* Contact Page Specific Styles */
 
+/* Breadcrumb */
+.breadcrumb {
+    padding: 20px 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.breadcrumb a {
+    color: #a1cce7;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: #e83e8c;
+}
+
 /* Contact Hero Section */
 .contact-hero {
     padding: 60px 0 40px;
@@ -626,18 +642,92 @@
         padding: 25px;
     }
     
+    /* ENHANCED MOBILE CONTACT METHODS */
+    .contact-methods {
+        gap: 20px;
+        margin-bottom: 35px;
+    }
+    
     .contact-method {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        align-items: center;
         gap: 15px;
+        padding: 18px 15px;
+        text-align: left;
+    }
+    
+    .contact-method:hover {
+        transform: translateY(-2px);
     }
     
     .method-icon {
-        align-self: center;
+        width: 45px;
+        height: 45px;
+        flex-shrink: 0;
+    }
+    
+    .method-content {
+        flex: 1;
+    }
+    
+    .method-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+    
+    .method-content p {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+        line-height: 1.4;
+    }
+    
+    .contact-link {
+        font-size: 0.9rem;
+        word-break: break-all;
+    }
+    
+    /* ENHANCED SOCIAL CONTACT */
+    .social-contact {
+        margin-bottom: 35px;
+    }
+    
+    .social-contact h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        text-align: center;
     }
     
     .social-icons {
         justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    
+    .social-icon {
+        width: 44px;
+        height: 44px;
+    }
+    
+    /* ENHANCED FAQ SECTION */
+    .faq-section h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    
+    .faq-item {
+        margin-bottom: 15px;
+        padding: 12px;
+    }
+    
+    .faq-item h4 {
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+    }
+    
+    .faq-item p {
+        font-size: 0.85rem;
+        line-height: 1.4;
     }
 }
 
@@ -648,7 +738,7 @@
     
     .contact-form-section,
     .contact-info-section {
-        padding: 20px;
+        padding: 20px 15px;
     }
     
     .form-title,
@@ -659,5 +749,117 @@
     .submit-btn {
         padding: 12px 25px;
         font-size: 1rem;
+    }
+    
+    /* SMALL MOBILE CONTACT METHODS */
+    .contact-methods {
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+    
+    .contact-method {
+        padding: 15px 12px;
+        gap: 12px;
+    }
+    
+    .method-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .method-content h3 {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    
+    .method-content p {
+        font-size: 0.8rem;
+        margin-bottom: 6px;
+    }
+    
+    .contact-link {
+        font-size: 0.85rem;
+    }
+    
+    .social-contact h3 {
+        font-size: 1.1rem;
+    }
+    
+    .social-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .faq-section h3 {
+        font-size: 1.1rem;
+    }
+    
+    .faq-item {
+        padding: 10px;
+    }
+    
+    .faq-item h4 {
+        font-size: 0.9rem;
+    }
+    
+    .faq-item p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Touch-friendly adjustments for mobile */
+@media (max-width: 768px) {
+    .contact-method,
+    .social-icon,
+    .submit-btn {
+        min-height: 44px;
+    }
+    
+    .contact-link {
+        min-height: 30px;
+        display: inline-flex;
+        align-items: center;
+    }
+}
+
+/* Focus states for accessibility */
+.submit-btn:focus,
+.contact-link:focus,
+.social-icon:focus {
+    outline: 3px solid rgba(161, 204, 231, 0.6);
+    outline-offset: 2px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid rgba(161, 204, 231, 0.6);
+    outline-offset: 1px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .contact-method,
+    .contact-form-section,
+    .contact-info-section {
+        border-width: 2px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        border-width: 2px;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }

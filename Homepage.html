@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Butler Trading Cards</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="homepage.css">
 </head>
 <body>
     <header>
@@ -74,7 +74,7 @@
                                 <div class="cart-total">
                                     <strong>Total: $<span id="cartTotal">0.00</span></strong>
                                 </div>
-                                <button class="checkout-btn">CHECKOUT</button>
+                                <a href="checkout.html" class="checkout-btn">CHECKOUT</a>
                             </div>
                         </div>
                     </div>
@@ -241,16 +241,22 @@
                 </div>
                 
                 <div class="products-grid">
-                    <div class="product-card">
+                    <div class="product-card" data-availability="instock" onclick="goToProductDetail(1)" style="cursor: pointer;">
                         <div class="product-img">
-                            <img src="nba hoops.png" alt="NBA Hoops">
+                            <div class="sport-icon">🏀</div>
+                            <div class="availability-badge instock">IN STOCK</div>
+                            <img src="hoops23-24.png" alt="NBA Hoops">
                         </div>
                         <div class="product-info">
-                            <h3>NBA Hoops 2023-24</h3>
-                            <p class="product-type">Basketball Cards</p>
+                            <h3>2023-24 Panini NBA Hoops Basketball Hobby Box</h3>
+                            <p class="product-type">NBA Trading Cards</p>
+                            <div class="product-meta">
+                                <span class="product-brand">Panini</span>
+                                <span class="product-type-badge">HOBBY</span>
+                            </div>
                             <div class="product-pricing">
                                 <span class="price">$119.99</span>
-                                <div class="add-to-cart" onclick="addToCart(1, 'NBA Hoops 2023-24', 119.99)">
+                                <div class="add-to-cart" onclick="event.stopPropagation(); addToCart(1, '2023-24 Panini NBA Hoops Basketball Hobby Box', 119.99, 'hoops23-24.png')">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <circle cx="9" cy="21" r="1"></circle>
                                         <circle cx="20" cy="21" r="1"></circle>
@@ -260,17 +266,23 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="product-card">
+
+                    <div class="product-card" data-availability="instock" onclick="goToProductDetail(2)" style="cursor: pointer;">
                         <div class="product-img">
-                            <img src="spectra.png" alt="Panini Spectra">
+                            <div class="sport-icon">🏀</div>
+                            <div class="availability-badge instock">IN STOCK</div>
+                            <img src="spectra23-24.png" alt="Panini Spectra">
                         </div>
                         <div class="product-info">
-                            <h3>Panini Spectra 2023-24</h3>
+                            <h3>2023-24 Spectra Basketball Hobby International Box</h3>
                             <p class="product-type">NBA Trading Cards</p>
+                            <div class="product-meta">
+                                <span class="product-brand">Panini</span>
+                                <span class="product-type-badge">HOBBY</span>
+                            </div>
                             <div class="product-pricing">
-                                <span class="price">$299.99</span>
-                                <div class="add-to-cart" onclick="addToCart(2, 'Panini Spectra 2023', 299.99)">
+                                <span class="price">$229.99</span>
+                                <div class="add-to-cart" onclick="event.stopPropagation(); addToCart(2, '2023-24 Spectra Basketball Hobby International Box', 229.99, 'spectra23-24.png')">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <circle cx="9" cy="21" r="1"></circle>
                                         <circle cx="20" cy="21" r="1"></circle>
@@ -280,17 +292,23 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="product-card">
+
+                    <div class="product-card" data-availability="instock" onclick="goToProductDetail(3)" style="cursor: pointer;">
                         <div class="product-img">
-                            <img src="donruss.png" alt="Donruss Basketball">
+                            <div class="sport-icon">🏀</div>
+                            <div class="availability-badge instock">IN STOCK</div>
+                            <img src="donruss24-25.png" alt="Donruss Basketball">
                         </div>
                         <div class="product-info">
-                            <h3>Panini Donruss 2024-25</h3>
-                            <p class="product-type">Basketball Cards</p>
+                            <h3>2024-25 Donruss Basketball Hobby Box</h3>
+                            <p class="product-type">NBA Trading Cards</p>
+                            <div class="product-meta">
+                                <span class="product-brand">Panini</span>
+                                <span class="product-type-badge">HOBBY</span>
+                            </div>
                             <div class="product-pricing">
                                 <span class="price">$159.99</span>
-                                <div class="add-to-cart" onclick="addToCart(3, 'Donruss Basketball 2023', 159.99)">
+                                <div class="add-to-cart" onclick="event.stopPropagation(); addToCart(3, '2024-25 Donruss Basketball Hobby Box', 159.99, 'donruss24-25.png')">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <circle cx="9" cy="21" r="1"></circle>
                                         <circle cx="20" cy="21" r="1"></circle>
@@ -300,17 +318,23 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="product-card">
+
+                    <div class="product-card" data-availability="instock" onclick="goToProductDetail(11)" style="cursor: pointer;">
                         <div class="product-img">
-                            <img src="draftpicks.png" alt="Prizm Draft Picks">
+                            <div class="sport-icon">🏀</div>
+                            <div class="availability-badge instock">IN STOCK</div>
+                            <img src="prizm-draft24.png" alt="Prizm Draft Picks">
                         </div>
                         <div class="product-info">
-                            <h3>Prizm Draft Picks 2024</h3>
+                            <h3>2024 Prizm Draft Picks Basketball</h3>
                             <p class="product-type">NCAA Basketball Cards</p>
+                            <div class="product-meta">
+                                <span class="product-brand">Panini</span>
+                                <span class="product-type-badge">HOBBY</span>
+                            </div>
                             <div class="product-pricing">
                                 <span class="price">$179.99</span>
-                                <div class="add-to-cart" onclick="addToCart(4, 'Prizm Draft Picks 2023', 179.99)">
+                                <div class="add-to-cart" onclick="event.stopPropagation(); addToCart(11, '2024 Prizm Draft Picks Basketball', 179.99, 'prizm-draft24.png')">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <circle cx="9" cy="21" r="1"></circle>
                                         <circle cx="20" cy="21" r="1"></circle>
@@ -352,7 +376,7 @@
             <!-- Links Section -->
             <div class="footer-links">
                 <div class="footer-column">
-                    <a href="#">About</a>
+                    <a href="about.html">About</a>
                     <a href="products.html">Products</a>
                     <a href="contact.html">Contact us</a>
                 </div>
@@ -435,6 +459,6 @@
         </div>
     </div>
     
-    <script src="script.js"></script>
+    <script src="homepage.js"></script>
 </body>
 </html>
